@@ -13,5 +13,14 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Initialise fulllpage scroller
  */
+new fullpage('#fullpage', {
+	//options here
+	autoScrolling:true,
+	scrollHorizontally: true,
+	anchors:['introduction', 'projects', 'links','gallery','blog']
+});
+
+//methods
+fullpage_api.setAllowScrolling(false);
