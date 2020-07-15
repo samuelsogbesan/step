@@ -1,4 +1,6 @@
 ::root{
+    font-family:"Roboto";
+    font-style:normal;
     font-size:5vw;
     --primary:#3D67D1;
     --secondary:#0286FF;
