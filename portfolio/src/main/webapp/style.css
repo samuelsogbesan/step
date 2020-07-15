@@ -1,3 +1,7 @@
 ::root{
     font-size:5vw;
+    --primary:#3D67D1;
+    --secondary:#0286FF;
+    --tertiary:#07D2FF;
+    --quaternary:#3AC6F2;
 }
