@@ -34,4 +34,10 @@ body{
     justify-content:center;
     font-size:5vw;
     cursor: pointer;
+    background: white;
+    transition: 0.5s filter ease-in-out;
+}
+
+.navigation-item:hover{
+    filter:invert(1);
 }
