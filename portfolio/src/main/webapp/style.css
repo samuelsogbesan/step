@@ -21,5 +21,14 @@ body{
 }
 
 #introduction{
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#introduction > *{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    align-items: center;
 }
