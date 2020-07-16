@@ -39,3 +39,7 @@ body{
     border-radius: 0.5rem;
     margin: auto;
 }
+
+.card:hover{
+    filter: invert(1);
+}
