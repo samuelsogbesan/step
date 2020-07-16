@@ -1,9 +1,8 @@
-body{
+body {
     margin:0;
 }
 
-
-#fullpage{
+#fullpage {
     min-width: 100vw;
     min-height: 100vh;
     min-width: 100vw;
@@ -12,7 +11,7 @@ body{
     overflow-y: scroll;
 }
 
-.section{
+.section {
     min-height: 100vh;
     max-height: 100vh;
     overflow: hidden;
