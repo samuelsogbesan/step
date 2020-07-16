@@ -55,3 +55,14 @@ body{
 .introduction-wrapper > * :last-child{
     flex:0.8;
 }
+
+.introduction-wrapper h2{
+    margin:0;
+}
+
+.introduction-wrapper p{
+    background-color:white;
+}
+.introduction-image-wrapper > img{
+    outline:3px white solid;
+}
