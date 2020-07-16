@@ -39,8 +39,16 @@ body{
     border:1px black solid;
     border-radius: 0.5rem;
     margin: auto;
-    transition: 0.5s filter ease-in-out;
+
     cursor:pointer;
+}
+
+.card,.card-heading,.card-subheading{
+    transition: 0.5s filter ease-in-out;
+}
+
+.card-heading{
+    filter:invert(0);
 }
 
 .card-subheading{
@@ -53,4 +61,8 @@ body{
 
 .card:hover > .card-subheading{
     filter:invert(0);
+}
+
+.card:hover > .card-heading{
+    filter:invert(1);
 }
