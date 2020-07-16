@@ -20,6 +20,12 @@ body{
     max-width: 100%;
 }
 
+#gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .gallery-wrapper{
     width: 50vw;
     height: 50vh;
