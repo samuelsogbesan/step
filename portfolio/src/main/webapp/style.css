@@ -20,6 +20,14 @@ body{
     max-width: 100%;
 }
 
-#contact{
-    
+.socials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    align-items:center;
+    margin: 0 auto;
+}
+
+.socials-grid > * {
+    display:flex;
+    justify-content:center;
 }
