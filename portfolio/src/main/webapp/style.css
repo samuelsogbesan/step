@@ -30,6 +30,7 @@ body{
     width: 70%;
     outline: 1px black solid;
     height: 50vh;
+    text-align:center;
 }
 
 .introduction-wrapper > *{
@@ -39,6 +40,8 @@ body{
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
+    line-height:2rem;
+    font-size:1.25rem;
 }
 
 .introduction-wrapper > * > *{
