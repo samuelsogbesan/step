@@ -20,13 +20,19 @@ body{
     max-width: 100%;
 }
 
-#introduction{
+#introduction,.introduction-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#introduction > *{
+.introduction-wrapper{
+    width: 70%;
+    outline: 1px black solid;
+    height: 50vh;
+}
+
+.introduction-wrapper > *{
     display: flex;
     flex-direction: column;
     flex: 0.5;
