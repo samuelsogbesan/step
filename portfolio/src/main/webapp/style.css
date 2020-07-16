@@ -37,4 +37,18 @@ body{
     flex-direction: column;
     flex: 0.5;
     align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.introduction-wrapper > * > *{
+    display:flex;
+    align-items:center;
+}
+
+.introduction-wrapper > * :first-child{
+    flex:0.2;
+}
+.introduction-wrapper > * :last-child{
+    flex:0.8;
 }
