@@ -35,9 +35,12 @@ body{
     width: 70%;
     height: 70%;
     align-self: center;
+    background:white;
     border:1px black solid;
     border-radius: 0.5rem;
     margin: auto;
+    transition: 0.5s filter ease-in-out;
+    cursor:pointer;
 }
 
 .card:hover{
