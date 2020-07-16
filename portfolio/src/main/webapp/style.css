@@ -36,6 +36,7 @@ body{
     cursor: pointer;
     background: white;
     transition: 0.5s filter ease-in-out;
+    margin:0;
 }
 
 .navigation-item:hover{
