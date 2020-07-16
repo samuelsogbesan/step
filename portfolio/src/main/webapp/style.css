@@ -43,6 +43,14 @@ body{
     cursor:pointer;
 }
 
+.card-subheading{
+    filter:invert(1);
+}
+
 .card:hover{
     filter: invert(1);
+}
+
+.card:hover > .card-subheading{
+    filter:invert(0);
 }
