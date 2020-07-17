@@ -20,19 +20,19 @@ body {
     max-width: 100%;
 }
 
-#introduction,.introduction-wrapper {
+#intro,.intro-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.introduction-wrapper {
+.intro-wrapper {
     width: 70%;
     height: 50vh;
     text-align:center;
 }
 
-.introduction-wrapper > * {
+.intro-wrapper > * {
     display: flex;
     flex-direction: column;
     flex: 0.5;
@@ -43,36 +43,36 @@ body {
     font-size:1.25rem;
 }
 
-.introduction-wrapper > * > * {
+.intro-wrapper > * > * {
     display:flex;
     align-items:center;
     justify-content: center;
 }
 
-.introduction-wrapper h3 {
+.intro-wrapper h3 {
   font-family: "Roboto Light";
   font-style: italic;
   font-weight: lighter;
   margin:0;
 }
 
-.introduction-wrapper > * :first-child {
+.intro-wrapper > * :first-child {
     flex:0.2;
 }
-.introduction-wrapper > * :last-child {
+.intro-wrapper > * :last-child {
     flex:0.8;
 }
 
-.introduction-wrapper h2 {
+.intro-wrapper h2 {
     margin:0;
     font-size:3rem;
     line-height: 2.5rem;
 }
 
-.introduction-wrapper p {
+.intro-wrapper p {
     background-color:white;
     text-align: center;
 }
-.introduction-image-wrapper > img {
+.intro-image-wrapper > img {
     outline:3px white solid;
 }
