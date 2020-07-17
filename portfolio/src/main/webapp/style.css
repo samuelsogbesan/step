@@ -74,6 +74,6 @@ body {
   background-color:white;
   text-align: center;
 }
-.intro-image-wrapper > img {
+.intro-content > img {
   outline:3px white solid;
 }
