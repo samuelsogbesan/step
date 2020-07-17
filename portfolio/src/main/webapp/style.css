@@ -1,9 +1,9 @@
-body{
+body {
     margin:0;
 }
 
 
-#fullpage{
+#fullpage {
     min-width: 100vw;
     min-height: 100vh;
     min-width: 100vw;
@@ -12,7 +12,7 @@ body{
     overflow-y: scroll;
 }
 
-.section{
+.section {
     min-height: 100vh;
     max-height: 100vh;
     overflow: hidden;
@@ -20,19 +20,19 @@ body{
     max-width: 100%;
 }
 
-#introduction,.introduction-wrapper{
+#introduction,.introduction-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.introduction-wrapper{
+.introduction-wrapper {
     width: 70%;
     height: 50vh;
     text-align:center;
 }
 
-.introduction-wrapper > *{
+.introduction-wrapper > * {
     display: flex;
     flex-direction: column;
     flex: 0.5;
@@ -43,7 +43,7 @@ body{
     font-size:1.25rem;
 }
 
-.introduction-wrapper > * > *{
+.introduction-wrapper > * > * {
     display:flex;
     align-items:center;
     justify-content: center;
@@ -56,23 +56,23 @@ body{
   margin:0;
 }
 
-.introduction-wrapper > * :first-child{
+.introduction-wrapper > * :first-child {
     flex:0.2;
 }
-.introduction-wrapper > * :last-child{
+.introduction-wrapper > * :last-child {
     flex:0.8;
 }
 
-.introduction-wrapper h2{
+.introduction-wrapper h2 {
     margin:0;
     font-size:3rem;
     line-height: 2.5rem;
 }
 
-.introduction-wrapper p{
+.introduction-wrapper p {
     background-color:white;
     text-align: center;
 }
-.introduction-image-wrapper > img{
+.introduction-image-wrapper > img {
     outline:3px white solid;
 }
