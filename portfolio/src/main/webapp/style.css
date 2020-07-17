@@ -2,7 +2,6 @@ body {
     margin:0;
 }
 
-
 #fullpage {
     min-width: 100vw;
     min-height: 100vh;
@@ -23,7 +22,6 @@ body {
     flex-direction:column;
     justify-content:space-evenly;
 }
-
 
 .socials-grid {
     display:grid;
