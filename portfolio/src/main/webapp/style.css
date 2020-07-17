@@ -1,9 +1,9 @@
 ::root{
-    font-family:"Roboto";
-    font-style:normal;
-    font-size:5vw;
-    --primary:#3d67d1;
-    --secondary:#0286ff;
-    --tertiary:#07d2ff;
-    --quaternary:#3ac6f2;
+  font-family:"Roboto";
+  font-style:normal;
+  font-size:5vw;
+  --primary:#3d67d1;
+  --secondary:#0286ff;
+  --tertiary:#07d2ff;
+  --quaternary:#3ac6f2;
 }
