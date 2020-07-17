@@ -62,6 +62,8 @@ body{
 .introduction-wrapper p{
     background-color:white;
     text-align: center;
+    font-family: "Roboto Light";
+    font-style: italic;
 }
 .introduction-image-wrapper > img{
     outline:3px white solid;
