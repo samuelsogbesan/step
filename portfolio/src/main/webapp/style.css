@@ -64,6 +64,8 @@ body{
 
 .introduction-wrapper h2{
     margin:0;
+    font-size:3rem;
+    line-height: 2.5rem;
 }
 
 .introduction-wrapper p{
