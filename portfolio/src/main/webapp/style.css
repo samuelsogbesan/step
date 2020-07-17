@@ -61,6 +61,7 @@ body{
 
 .introduction-wrapper p{
     background-color:white;
+    text-align: center;
 }
 .introduction-image-wrapper > img{
     outline:3px white solid;
