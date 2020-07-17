@@ -48,6 +48,12 @@ body{
     align-items:center;
 }
 
+.introduction-wrapper h3 {
+  font-family: "Roboto Light";
+  font-style: italic;
+  font-weight: lighter;
+}
+
 .introduction-wrapper > * :first-child{
     flex:0.2;
 }
@@ -62,8 +68,6 @@ body{
 .introduction-wrapper p{
     background-color:white;
     text-align: center;
-    font-family: "Roboto Light";
-    font-style: italic;
 }
 .introduction-image-wrapper > img{
     outline:3px white solid;
