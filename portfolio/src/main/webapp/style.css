@@ -21,14 +21,14 @@ body {
   text-align: center;
 }
 
-#navigation{
+#navigation {
     display:grid;
     gap:1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:1fr 1fr;
 }
 
-.navigation-item{
+.navigation-item {
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -40,6 +40,6 @@ body {
     margin:0;
 }
 
-.navigation-item:hover{
+.navigation-item:hover {
   filter:invert(1);
 }
