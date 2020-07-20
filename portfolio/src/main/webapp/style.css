@@ -10,9 +10,13 @@ body {
 }
 
 .section {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
   max-height: 100vh;
-  overflow: hidden;
-  min-width: 100%;
   max-width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
 }
