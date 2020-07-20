@@ -15,6 +15,7 @@ body {
   min-width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;
+  color:white;
 }
 
 .section {
@@ -50,4 +51,20 @@ body {
 
 .navigation-item:hover {
   filter:invert(1);
+}
+
+.navigation-item[data-link="introduction"]{
+  background-color: var(--primary);
+}
+
+.navigation-item[data-link="projects"]{
+  background-color: var(--secondary);
+}
+
+.navigation-item[data-link="gallery"]{
+  background-color: var(--tertiary);
+}
+
+.navigation-item[data-link="contact"]{
+  background-color: var(--quaternary);
 }
