@@ -17,6 +17,11 @@ body {
   overflow: hidden;
 }
 
+a {
+  color: initial;
+  text-decoration: none;
+}
+
 #projects {
   align-items: center;
   display: grid;
