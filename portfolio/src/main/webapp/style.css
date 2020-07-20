@@ -1,7 +1,31 @@
+<<<<<<< HEAD
 :root{
   font: normal 5vw Roboto;
   --primary: #3d67d1;
   --secondary: #0286ff;
   --tertiary: #07d2ff;
   --quaternary: #3ac6f2;
+=======
+body {
+  margin: 0;
+}
+
+#fullpage {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
+  max-height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+>>>>>>> d20f1deecc026c1745c3e622f3b863cdabb84ee2
 }
