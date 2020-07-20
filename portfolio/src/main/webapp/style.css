@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+#fullpage {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
+  max-height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
