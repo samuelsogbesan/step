@@ -20,22 +20,22 @@ body {
 }
 
 #gallery {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
 }
 
 .gallery-wrapper {
-    width: 50vw;
-    height: 50vh;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
+    height: 50vh;
+    width: 50vw;
 }
 
 .gallery-card {
-    grid-row: span 1;
     grid-column: span 1;
+    grid-row: span 1;
     outline: 1px black solid;
 }
 
