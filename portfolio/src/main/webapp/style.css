@@ -1,3 +1,11 @@
+:root {
+  font: normal 5vw Roboto;
+  --primary: #3d67d1;
+  --secondary: #0286ff;
+  --tertiary: #07d2ff;
+  --quaternary: #3ac6f2;
+}
+
 body {
   margin: 0;
 }
