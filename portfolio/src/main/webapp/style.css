@@ -1,48 +1,48 @@
 body {
-    margin:0;
+  margin: 0;
 }
 
 #fullpage {
-    min-width: 100vw;
-    min-height: 100vh;
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+  min-width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .section {
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-    min-width: 100%;
-    max-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 #gallery {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .gallery-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
-    height: 50vh;
-    width: 50vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 50vh;
+  width: 50vw;
 }
 
 .gallery-card {
-    grid-column: span 1;
-    grid-row: span 1;
-    outline: 1px black solid;
+  grid-column: span 1;
+  grid-row: span 1;
+  outline: 1px black solid;
 }
 
 .gallery-card.tall {
-    grid-row: span 2;
+  grid-row: span 2;
 }
 
 .gallery-card.wide {
-    grid-column: span 2;
+  grid-column: span 2;
 }
