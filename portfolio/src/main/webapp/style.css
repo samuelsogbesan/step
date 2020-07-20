@@ -1,8 +1,8 @@
-body{
+body {
     margin:0;
 }
 
-#fullpage{
+#fullpage {
     min-width: 100vw;
     min-height: 100vh;
     min-width: 100vw;
@@ -11,7 +11,7 @@ body{
     overflow-y: scroll;
 }
 
-.section{
+.section {
     min-height: 100vh;
     max-height: 100vh;
     overflow: hidden;
@@ -19,13 +19,13 @@ body{
     max-width: 100%;
 }
 
-#gallery{
+#gallery {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.gallery-wrapper{
+.gallery-wrapper {
     width: 50vw;
     height: 50vh;
     display: grid;
@@ -33,16 +33,16 @@ body{
     grid-template-rows: repeat(2,1fr);
 }
 
-.gallery-card{
+.gallery-card {
     grid-row: span 1;
     grid-column: span 1;
     outline: 1px black solid;
 }
 
-.gallery-card.tall{
+.gallery-card.tall {
     grid-row: span 2;
 }
 
-.gallery-card.wide{
+.gallery-card.wide {
     grid-column: span 2;
 }
