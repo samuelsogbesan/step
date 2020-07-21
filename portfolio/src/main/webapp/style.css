@@ -1,10 +1,16 @@
+:root {
+  font: normal Roboto;
+  --primary: #3d67d1;
+  --secondary: #0286ff;
+  --tertiary: #07d2ff;
+  --quaternary: #3ac6f2;
+}
+
 body {
   margin: 0;
 }
 
 #fullpage {
-  min-width: 100vw;
-  min-height: 100vh;
   min-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
@@ -39,4 +45,85 @@ body {
 
 .socials-grid > * > img {
   padding: 1.5rem 0;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+#projects {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+  align-items: center;
+  align-self: center;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px black solid;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+}
+
+.card,
+.card-heading,
+.card-subheading {
+  transition: 0.5s filter ease-in-out;
+}
+
+.card-heading {
+  filter: invert(0);
+}
+
+.card-subheading {
+  filter: invert(1);
+}
+
+.card:hover {
+  filter: invert(1);
+}
+
+.card:hover>.card-subheading {
+  filter: invert(0);
+}
+
+.card:hover>.card-heading {
+  filter: invert(1);
+}
+
+#gallery {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 50vh;
+  width: 50vw;
+}
+
+.gallery-card {
+  grid-column: span 1;
+  grid-row: span 1;
+  outline: 1px black solid;
+}
+
+.gallery-card.tall {
+  grid-row: span 2;
+}
+
+.gallery-card.wide {
+  grid-column: span 2;
 }
