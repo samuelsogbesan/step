@@ -34,15 +34,15 @@ body {
 }
 
 .navigation-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vw;
-    cursor: pointer;
-    background: white;
-    transition: 0.5s filter ease-in-out;
-    margin: 0;
+  align-items: center;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 5vw;
+  justify-content: center;
+  margin: 0;
+  transition: 0.5s filter ease-in-out;
 }
 
 .navigation-item:hover {
