@@ -1,5 +1,5 @@
 :root {
-  font: normal 5vw Roboto;
+  font: normal Roboto;
   --primary: #3d67d1;
   --secondary: #0286ff;
   --tertiary: #07d2ff;
@@ -13,8 +13,6 @@ body {
 #fullpage {
   min-width: 100vw;
   min-height: 100vh;
-  min-width: 100vw;
-  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -25,8 +23,6 @@ body {
   overflow: hidden;
   min-width: 100%;
   max-width: 100%;
-}
-
 }
 
 a {
@@ -80,6 +76,7 @@ a {
 
 .card:hover>.card-heading {
   filter: invert(1);
+}
 
 #gallery {
   align-items: center;
