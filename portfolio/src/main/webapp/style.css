@@ -24,6 +24,9 @@ body {
   min-width: 100%;
   max-width: 100%;
   text-align: center;
+}
+
+#contact{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
