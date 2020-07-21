@@ -49,19 +49,19 @@ body {
   filter: invert(1);
 }
 
-.navigation-item[data-link="introduction"]{
+.navigation-item[data-link='introduction']{
   background-color: var(--primary);
 }
 
-.navigation-item[data-link="projects"]{
+.navigation-item[data-link='projects']{
   background-color: var(--secondary);
 }
 
-.navigation-item[data-link="gallery"]{
+.navigation-item[data-link='gallery']{
   background-color: var(--tertiary);
 }
 
-.navigation-item[data-link="contact"]{
+.navigation-item[data-link='contact']{
   background-color: var(--quaternary);
 }
 
