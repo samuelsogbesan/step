@@ -50,9 +50,7 @@ body {
 }
 
 .intro-wrapper h3 {
-  font-family: "Roboto Light";
-  font-style: italic;
-  font-weight: lighter;
+  font: lighter italic "Roboto Light";
   margin:0;
 }
 
