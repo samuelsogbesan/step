@@ -27,10 +27,10 @@ body {
 
 #navigation {
   font-size: 5vw;
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows:1fr 1fr;
-  color:white;
+  grid-template-rows: 1fr 1fr;
+  color: white;
 }
 
 .navigation-item {
@@ -49,19 +49,19 @@ body {
   filter: invert(1);
 }
 
-.navigation-item[data-link='introduction']{
+.navigation-item[data-link='introduction'] {
   background-color: var(--primary);
 }
 
-.navigation-item[data-link='projects']{
+.navigation-item[data-link='projects'] {
   background-color: var(--secondary);
 }
 
-.navigation-item[data-link='gallery']{
+.navigation-item[data-link='gallery'] {
   background-color: var(--tertiary);
 }
 
-.navigation-item[data-link='contact']{
+.navigation-item[data-link='contact'] {
   background-color: var(--quaternary);
 }
 
