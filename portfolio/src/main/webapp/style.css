@@ -26,11 +26,11 @@ body {
 }
 
 #navigation {
-  font-size: 5vw;
+  color: white;
   display: grid;
+  font-size: 5vw;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  color: white;
 }
 
 .navigation-item {
