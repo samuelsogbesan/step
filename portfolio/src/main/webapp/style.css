@@ -34,7 +34,7 @@ body {
 
 .intro-wrapper {
   height: 50vh;
-  text-align:center;
+  text-align: center;
   width: 70%;
 }
 
@@ -46,12 +46,12 @@ body {
   font-size:1.25rem;
   height: 100%;
   justify-content: space-evenly;
-  line-height:2rem;
+  line-height: 2rem;
 }
 
 .intro-wrapper > * > * {
-  align-items:center;
-  display:flex;
+  align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -61,26 +61,26 @@ body {
 }
 
 .intro-wrapper > * :first-child {
-  flex:0.2;
+  flex: 0.2;
 }
 
 .intro-wrapper > * :last-child {
-  flex:0.8;
+  flex: 0.8;
 }
 
 .intro-wrapper h2 {
-  margin:0;
-  font-size:3rem;
+  margin: 0;
+  font-size: 3rem;
   line-height: 2.5rem;
 }
 
 .intro-wrapper p {
-  background-color:white;
+  background-color: white;
   text-align: center;
 }
 
 .intro-content > img {
-  outline:3px white solid;
+  outline: 3px white solid;
 }
 
 a {
