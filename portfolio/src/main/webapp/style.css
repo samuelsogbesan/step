@@ -1,5 +1,5 @@
 :root {
-  font: normal 5vw Roboto;
+  font: normal Roboto;
   --primary: #3d67d1;
   --secondary: #0286ff;
   --tertiary: #07d2ff;
@@ -63,6 +63,59 @@ body {
 
 .navigation-item[data-link='contact'] {
   background-color: var(--quaternary);
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+#projects {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+  align-items: center;
+  align-self: center;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px black solid;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+}
+
+.card,
+.card-heading,
+.card-subheading {
+  transition: 0.5s filter ease-in-out;
+}
+
+.card-heading {
+  filter: invert(0);
+}
+
+.card-subheading {
+  filter: invert(1);
+}
+
+.card:hover {
+  filter: invert(1);
+}
+
+.card:hover>.card-subheading {
+  filter: invert(0);
+}
+
+.card:hover>.card-heading {
+  filter: invert(1);
 }
 
 #gallery {
