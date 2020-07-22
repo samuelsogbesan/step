@@ -21,4 +21,4 @@ function printMessageFromServer(){
   })
 }
 
-window.onload = () => document.getElementById("data-button").addEventListener("click",printMessageFromServer);
+//window.onload = () => document.getElementById("data-button").addEventListener("click",printMessageFromServer);
