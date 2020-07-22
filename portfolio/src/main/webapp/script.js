@@ -11,3 +11,15 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+const navigate = (pageid) => document.getElementById(pageid).scrollIntoView({behavior:"smooth",block:"start"});
+
+
+function initialiseNavigation(){
+  var navigationItems = document.getElementsByClassName("navigation-item");
+  for(var i = 0; i <navigationItems.length;i++) navigationItems[i].addEventListener("click",function(){
+    navigate(this.getAttribute("data-link"))
+  })
+}
+
+window.onload = () => initialiseNavigation();
