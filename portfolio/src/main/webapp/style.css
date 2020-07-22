@@ -18,8 +18,38 @@ body {
 }
 
 .section {
-  min-height: 100vh;
   max-height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+#contact{
+  background-color:var(--tertiary);
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.socials-grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+}
+
+.socials-grid > * {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.socials-grid > * > img {
+  padding: 1.5rem 0;
   overflow: hidden;
 }
 
