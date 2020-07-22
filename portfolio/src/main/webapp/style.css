@@ -88,6 +88,7 @@ a {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  font-size:2.5rem;
   height: 70%;
   justify-content: center;
   margin: auto;
