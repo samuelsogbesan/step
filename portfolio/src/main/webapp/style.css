@@ -1,5 +1,5 @@
 :root {
-  font: normal Roboto;
+  font: normal 16px Roboto;
   --primary: #3d67d1;
   --secondary: #0286ff;
   --tertiary: #07d2ff;
@@ -11,8 +11,8 @@ body {
 }
 
 #fullpage {
-  min-width: 100vw;
   min-height: 100vh;
+  min-width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -21,8 +21,6 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  min-width: 100%;
-  max-width: 100%;
 }
 
 #navigation {
@@ -66,7 +64,7 @@ body {
 }
 
 a {
-  color: initial;
+  color: inherit;
   text-decoration: none;
 }
 
