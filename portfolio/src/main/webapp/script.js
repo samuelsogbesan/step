@@ -17,7 +17,7 @@ const navigate = (pageid) => document.getElementById(pageid).scrollIntoView({beh
 const initialiseNavigation = () => {
   var navigationItems = document.getElementsByClassName("navigation-item");
   for(var i = 0; i <navigationItems.length;i++) navigationItems[i].addEventListener("click",function(){
-    navigate(this.getAttribute("data-link"))
+    navigate(this.getAttribute("data-link"));
   })
 }
 
