@@ -25,6 +25,46 @@ min-width: 100vw;
   max-width: 100%;
 }
 
+#navigation {
+  color: white;
+  display: grid;
+  font-size: 5vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.navigation-item {
+  align-items: center;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 5vw;
+  justify-content: center;
+  margin: 0;
+  transition: 0.5s filter ease-in-out;
+}
+
+.navigation-item:hover {
+  filter: invert(1);
+}
+
+.navigation-item[data-link='introduction'] {
+  background-color: var(--primary);
+}
+
+.navigation-item[data-link='projects'] {
+  background-color: var(--secondary);
+}
+
+.navigation-item[data-link='gallery'] {
+  background-color: var(--tertiary);
+}
+
+.navigation-item[data-link='contact'] {
+  background-color: var(--quaternary);
+}
+
 a {
   color: inherit;
   text-decoration: none;
