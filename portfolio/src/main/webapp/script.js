@@ -22,3 +22,10 @@ function printMessageFromServer(){
 }
 
 //window.onload = () => document.getElementById("data-button").addEventListener("click",printMessageFromServer);
+
+function printJSONFromServer(){
+  fetch("/data")
+  .then(data => data.json())
+  .then(object => console.log(object))
+}
+
