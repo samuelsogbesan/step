@@ -17,9 +17,7 @@ function printMessageFromServer(){
   .then(data => data.text())
   .then(message => {
     var container = document.getElementById("data-container");
-    var messageElement = document.createElement("h2");
-    messageElement.innerText = message;
-    container.appendChild(messageElement);
+    container.innerText = message;
   })
 }
 
