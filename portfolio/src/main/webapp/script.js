@@ -29,3 +29,4 @@ function printJSONFromServer(){
   .then(object => console.log(object))
 }
 
+window.onload = () => printJSONFromServer();
