@@ -93,6 +93,64 @@ body {
   background-color: var(--quaternary);
 }
 
+#intro,
+.intro-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-wrapper {
+  height: 50vh;
+  text-align: center;
+  width: 70%;
+}
+
+.intro-wrapper > * {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  font-size:1.25rem;
+  height: 100%;
+  justify-content: space-evenly;
+  line-height: 2rem;
+}
+
+.intro-wrapper > * > * {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-wrapper h3 {
+  font: lighter italic "Roboto Light";
+  margin:0;
+}
+
+.intro-wrapper > * :first-child {
+  flex: 0.2;
+}
+
+.intro-wrapper > * :last-child {
+  flex: 0.8;
+}
+
+.intro-wrapper h2 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+
+.intro-wrapper p {
+  background-color: white;
+  text-align: center;
+}
+
+.intro-content > img {
+  outline: 3px white solid;
+}
+
 a {
   color: inherit;
   text-decoration: none;
