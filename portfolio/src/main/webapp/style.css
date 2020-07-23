@@ -77,7 +77,7 @@ body {
   filter: invert(1);
 }
 
-.navigation-item[data-link='introduction'] {
+.navigation-item[data-link='intro'] {
   background-color: var(--primary);
 }
 
@@ -102,6 +102,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
+  color:white;
 }
 
 .intro-wrapper {
@@ -133,7 +134,6 @@ body {
 }
 
 .intro-wrapper > * :first-child {
-  color:white;
   flex: 0.2;
 }
 
