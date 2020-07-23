@@ -107,8 +107,8 @@ a {
 }
 
 .card-subheading {
+  display: none;
   filter: invert(1);
-  display:none;
 }
 
 .card:hover {
@@ -116,13 +116,13 @@ a {
 }
 
 .card:hover>.card-subheading {
+  display: initial;
   filter: invert(0);
-  display:initial;
 }
 
 .card:hover>.card-heading {
+  display: none;
   filter: invert(1);
-  display:none;
 }
 
 #gallery {
