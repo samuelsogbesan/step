@@ -150,7 +150,7 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color:var(--quaternary);
+  background-color: var(--quaternary);
 }
 
 .gallery-wrapper {
