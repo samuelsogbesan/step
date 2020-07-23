@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function printJSONFromServer(){
+function printJSONFromServer() {
   fetch('/data')
   .then(data => data.json())
   .then(object => console.log(object))
