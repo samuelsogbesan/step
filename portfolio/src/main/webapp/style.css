@@ -51,6 +51,7 @@ body {
 .socials-grid > * > img {
   padding: 1.5rem 0;
   overflow: hidden;
+  width: 50%;
 }
 
 #navigation {
