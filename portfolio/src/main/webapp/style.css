@@ -11,18 +11,18 @@ body {
 }
 
 #fullpage {
-  min-width: 100vw;
   min-height: 100vh;
+  min-width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .section {
-  min-height: 100vh;
   max-height: 100vh;
-  overflow: hidden;
-  min-width: 100%;
   max-width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
 }
 
 #navigation {
