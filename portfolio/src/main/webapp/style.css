@@ -1,5 +1,5 @@
 :root {
-  font: normal Roboto;
+  font: normal 16px Roboto;
   --primary: #3d67d1;
   --secondary: #0286ff;
   --tertiary: #07d2ff;
@@ -15,6 +15,7 @@ body {
   min-width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .section {
@@ -22,6 +23,34 @@ body {
   max-width: 100%;
   min-height: 100vh;
   min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+#contact {
+  background-color:var(--tertiary);
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.socials-grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+}
+
+.socials-grid > * {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.socials-grid > * > img {
+  padding: 1.5rem 0;
   overflow: hidden;
 }
 
@@ -61,12 +90,71 @@ body {
   background-color: var(--tertiary);
 }
 
-.navigation-item[data-link='contact'] {
+.navigation-item[data-link='
+'] {
   background-color: var(--quaternary);
 }
 
+#intro,
+.intro-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-wrapper {
+  height: 50vh;
+  text-align: center;
+  width: 70%;
+}
+
+.intro-wrapper > * {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  font-size:1.25rem;
+  height: 100%;
+  justify-content: space-evenly;
+  line-height: 2rem;
+}
+
+.intro-wrapper > * > * {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-wrapper h3 {
+  font: lighter italic "Roboto Light";
+  margin:0;
+}
+
+.intro-wrapper > * :first-child {
+  flex: 0.2;
+}
+
+.intro-wrapper > * :last-child {
+  flex: 0.8;
+}
+
+.intro-wrapper h2 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+
+.intro-wrapper p {
+  background-color: white;
+  text-align: center;
+}
+
+.intro-content > img {
+  outline: 3px white solid;
+}
+
 a {
-  color: initial;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -129,6 +217,7 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color: var(--quaternary);
 }
 
 .gallery-wrapper {
@@ -142,7 +231,7 @@ a {
 .gallery-card {
   grid-column: span 1;
   grid-row: span 1;
-  outline: 1px black solid;
+  outline: 3px white solid;
 }
 
 .gallery-card.tall {
