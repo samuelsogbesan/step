@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior:'smooth', block:'start'});
+const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
   const navigationItems = document.getElementsByClassName('navigation-item');
