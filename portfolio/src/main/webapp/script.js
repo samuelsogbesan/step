@@ -12,17 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function printMessageFromServer(){
-  fetch("/data")
-  .then(data => data.text())
-  .then(message => {
-    var container = document.getElementById("data-container");
-    container.innerText = message;
-  })
-}
-
-//window.onload = () => document.getElementById("data-button").addEventListener("click",printMessageFromServer);
-
 function printJSONFromServer(){
   fetch("/data")
   .then(data => data.json())
