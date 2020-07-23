@@ -12,10 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function printJSONFromServer() {
-  fetch('/data')
-  .then(data => data.json())
-  .then(object => console.log(object))
+const add = (datapoint) => {
+  const container = document.getElementById("data-container");
+  const el = document.createElement("p");
+  el.innerText = datapoint;
+  container.appendChild(el);
 }
 
-window.onload = () => printJSONFromServer();
+function printJSONFromServer() {
+  container = document.getElementById("data-container");
+  fetch('/data')
+  .then(data => data.json())
+  .then(object => object.forEach(datapoint => add(datapoint)))
+}
+
+window.onload = () => document.getElementById("data-button").addEventListener("click",printJSONFromServer);
