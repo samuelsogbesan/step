@@ -27,7 +27,7 @@ body {
   text-align: center;
 }
 
-#contact{
+#contact {
   background-color:var(--tertiary);
   color:white;
   display: flex;
@@ -90,7 +90,8 @@ body {
   background-color: var(--tertiary);
 }
 
-.navigation-item[data-link='contact'] {
+.navigation-item[data-link='
+'] {
   background-color: var(--quaternary);
 }
 
@@ -159,6 +160,7 @@ a {
 
 #projects {
   align-items: center;
+  background-color: var(--secondary);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -170,12 +172,15 @@ a {
   background: white;
   border-radius: 0.5rem;
   border: 1px black solid;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  font-size: 2.5rem;
   height: 70%;
   justify-content: center;
   margin: auto;
+  text-align: center;
   width: 70%;
 }
 
@@ -190,6 +195,7 @@ a {
 }
 
 .card-subheading {
+  display: none;
   filter: invert(1);
 }
 
@@ -198,10 +204,12 @@ a {
 }
 
 .card:hover>.card-subheading {
+  display: initial;
   filter: invert(0);
 }
 
 .card:hover>.card-heading {
+  display: none;
   filter: invert(1);
 }
 
