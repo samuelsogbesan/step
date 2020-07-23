@@ -129,7 +129,7 @@ body {
 }
 
 .intro-wrapper h3 {
-  font: lighter italic "Roboto Light";
+  font: italic 2rem Roboto Light;
   margin:0;
 }
 
