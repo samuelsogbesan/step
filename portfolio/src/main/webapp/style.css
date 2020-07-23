@@ -50,8 +50,8 @@ body {
 
 .socials-grid > * > img {
   filter: invert(1);
-  padding: 1.5rem 0;
   overflow: hidden;
+  padding: 1.5rem 0;
   width: 50%;
 }
 
