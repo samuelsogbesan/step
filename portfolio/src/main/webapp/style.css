@@ -208,6 +208,7 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color: var(--quaternary);
 }
 
 .gallery-wrapper {
@@ -221,7 +222,7 @@ a {
 .gallery-card {
   grid-column: span 1;
   grid-row: span 1;
-  outline: 1px black solid;
+  outline: 3px white solid;
 }
 
 .gallery-card.tall {
