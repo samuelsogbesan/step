@@ -116,7 +116,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 0.5;
-  font-size:1.25rem;
+  font-size: 1.25rem;
   height: 100%;
   justify-content: space-evenly;
   line-height: 2rem;
@@ -130,7 +130,7 @@ body {
 
 .intro-wrapper h3 {
   font: italic 2rem Roboto Light;
-  margin:0;
+  margin: 0;
 }
 
 .intro-wrapper > * :first-child {
