@@ -93,6 +93,10 @@ body {
   background-color: var(--quaternary);
 }
 
+#intro {
+  background: var(--primary);
+}
+
 #intro,
 .intro-wrapper {
   align-items: center;
@@ -129,10 +133,12 @@ body {
 }
 
 .intro-wrapper > * :first-child {
+  color:white;
   flex: 0.2;
 }
 
 .intro-wrapper > * :last-child {
+  color:var(--primary);
   flex: 0.8;
 }
 
