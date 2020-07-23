@@ -19,7 +19,7 @@ const add = (datapoint) => {
   container.appendChild(el);
 }
 
-function printJSONFromServer() {
+const printJSONFromServer = () => {
   container = document.getElementById("data-container");
   fetch('/data')
   .then(data => data.json())
