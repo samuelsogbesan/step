@@ -13,7 +13,7 @@
 // limitations under the License.
 
 function printJSONFromServer(){
-  fetch("/data")
+  fetch('/data')
   .then(data => data.json())
   .then(object => console.log(object))
 }
