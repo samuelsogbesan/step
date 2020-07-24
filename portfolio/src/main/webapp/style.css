@@ -100,9 +100,9 @@ body {
 #intro,
 .intro-wrapper {
   align-items: center;
+  color: white;
   display: flex;
   justify-content: center;
-  color: white;
 }
 
 .intro-wrapper {
