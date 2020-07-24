@@ -26,4 +26,4 @@ const printJSONFromServer = () => {
   .then(object => object.forEach(datapoint => add(datapoint)))
 }
 
-window.onload = () => document.getElementById('data-button').addEventListener('click',printJSONFromServer);
+window.onload = () => document.getElementById('data-button').addEventListener('click', printJSONFromServer);
