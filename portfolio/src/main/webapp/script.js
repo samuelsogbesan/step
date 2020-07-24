@@ -14,16 +14,16 @@
 
 const add = (datapoint) => {
   const container = document.getElementById("data-container");
-  const el = document.createElement("p");
+  const el = document.createElement('p');
   el.innerText = datapoint;
   container.appendChild(el);
 }
 
 const printJSONFromServer = () => {
-  container = document.getElementById("data-container");
+  container = document.getElementById('data-container');
   fetch('/data')
   .then(data => data.json())
   .then(object => object.forEach(datapoint => add(datapoint)))
 }
 
-window.onload = () => document.getElementById("data-button").addEventListener("click",printJSONFromServer);
+window.onload = () => document.getElementById('data-button').addEventListener('click',printJSONFromServer);
