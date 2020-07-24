@@ -138,7 +138,7 @@ body {
 }
 
 .intro-wrapper > * :last-child {
-  color:var(--primary);
+  color: var(--primary);
   flex: 0.8;
 }
 
