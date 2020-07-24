@@ -260,4 +260,26 @@ a {
 
 #comments-form {
   flex: 0.3;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.comment-io {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-element > input {
+
 }

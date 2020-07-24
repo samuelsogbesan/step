@@ -97,16 +97,16 @@
       </div>
       <div class="section" id="comments">
         <div class="comments-wrapper">
-          <div id="comments-container">
+          <div id="comments-container" class="comment-io">
           </div>
           <form id="comments-form" action="/data" method="POST">
             <div class="form-element">
               <label>So, what'd you think?</label>
-              <input name="comment" type="text" placeholder="Awesome..." required>
+              <input class="comment-io" name="comment" type="text" placeholder="Awesome..." required>
             </div>
             <div class="form-element">
               <label>Nickname</label>
-              <input name="comment" type="text" placeholder="Awesome...">
+              <input class="comment-io" name="comment" type="text" placeholder="Awesome...">
             </div>
             <input type="submit">
           </form>
