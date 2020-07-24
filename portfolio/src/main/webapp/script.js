@@ -18,7 +18,7 @@ function printMessageFromServer(){
   .then(message => {
     var container = document.getElementById('data-container');
     container.innerText = message;
-  })
+  });
 }
 
 window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
