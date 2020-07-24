@@ -242,8 +242,8 @@ a {
 }
 
 #comments {
-  background-color:var(--quaternary);
   align-items: center;
+  background-color:var(--quaternary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,11 +254,11 @@ a {
 }
 
 .comments-wrapper {
-  height:80vh;
-  width:40%;
   display: flex;
   flex-direction: column;
+  height:80vh;
   justify-content: center;
+  width:40%;
 }
 
 #comments-container {
@@ -267,8 +267,8 @@ a {
 }
 
 #comments-form {
-  flex: 0.3;
   align-items: stretch;
+  flex: 0.3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -290,7 +290,7 @@ a {
 }
 
 #comments-form input:required::placeholder{
-  font-weight: bold
+  font-weight: bold;
 }
 
 #comments-form > input[type='submit']{
