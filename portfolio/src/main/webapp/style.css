@@ -284,6 +284,10 @@ a {
   text-align: left;
 }
 
+#comments-form input:required::placeholder{
+  font-weight: bold
+}
+
 #comments-form > input[type='submit']{
   align-self: center;
   background: #45F395;
