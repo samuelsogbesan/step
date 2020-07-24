@@ -30,7 +30,8 @@ public class DataServlet extends HttpServlet {
     response.getWriter().println("Hello Sam");
   }
 
-public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-  response.setContentType("text/html;");
-  response.getWriter().println("All okay");
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setContentType("text/html;");
+    response.getWriter().println("All okay");
 }
