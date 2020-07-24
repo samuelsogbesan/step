@@ -249,6 +249,10 @@ a {
   justify-content: center;
 }
 
+#comments > h2 {
+  color:white;
+}
+
 .comments-wrapper {
   height:80vh;
   width:50%;
