@@ -242,6 +242,7 @@ a {
 }
 
 #comments {
+  background-color:var(--quaternary);
   align-items: center;
   display: flex;
   justify-content: center;
@@ -256,6 +257,7 @@ a {
 
 #comments-container {
   flex:0.7;
+  padding:0;
 }
 
 #comments-form {
@@ -272,6 +274,7 @@ a {
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding:0.75rem;
 }
 
 .form-element {
@@ -280,6 +283,11 @@ a {
   text-align: left;
 }
 
-.form-element > input {
-
+#comments-form > input[type='submit']{
+  align-self: center;
+  background: #45F395;
+  border: none;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
 }
