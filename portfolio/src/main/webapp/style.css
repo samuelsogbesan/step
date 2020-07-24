@@ -251,6 +251,7 @@ a {
 
 #comments>h2 {
   color: white;
+  margin: 0;
 }
 
 .comments-wrapper {
