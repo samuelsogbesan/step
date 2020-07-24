@@ -16,7 +16,7 @@ function printMessageFromServer(){
   fetch('/data')
   .then(data => data.text())
   .then(message => {
-    var container = document.getElementById('data-container');
+    const container = document.getElementById('data-container');
     container.innerText = message;
   });
 }
