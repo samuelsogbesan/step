@@ -250,6 +250,8 @@ a {
 .comments-wrapper {
   height:80%;
   width:50%;
+  display: flex;
+  flex-direction: column;
 }
 
 #comments-container {
