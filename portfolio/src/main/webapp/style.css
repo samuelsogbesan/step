@@ -240,3 +240,18 @@ a {
 .gallery-card.wide {
   grid-column: span 2;
 }
+
+#comments {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.comments-wrapper {
+  height:80%;
+  width:50%;
+}
+
+#comments-container {
+  
+}

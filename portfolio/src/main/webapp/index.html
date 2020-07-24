@@ -96,19 +96,21 @@
         </div>
       </div>
       <div class="section" id="comments">
-        <div id="comments-container">
+        <div class="comments-wrapper">
+          <div id="comments-container">
+          </div>
+          <form id="comments-form" action="/data" method="POST">
+            <div class="form-element">
+              <label>So, what'd you think?</label>
+              <input name="comment" type="text" placeholder="Awesome..." required>
+            </div>
+            <div class="form-element">
+              <label>Nickname</label>
+              <input name="comment" type="text" placeholder="Awesome...">
+            </div>
+            <input type="submit">
+          </form>
         </div>
-        <form id="comments-form" action="/data" method="POST">
-          <div class="form-element">
-            <label>So, what'd you think?</label>
-            <input name="comment" type="text" placeholder="Awesome..." required>
-          </div>
-          <div class="form-element">
-            <label>Nickname</label>
-            <input name="comment" type="text" placeholder="Awesome...">
-          </div>
-          <input type="submit">
-        </form>
       </div>
     </div>
   </body>
