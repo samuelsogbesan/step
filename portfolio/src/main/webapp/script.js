@@ -13,12 +13,12 @@
 // limitations under the License.
 
 function printMessageFromServer(){
-  fetch("/data")
+  fetch('/data')
   .then(data => data.text())
   .then(message => {
-    var container = document.getElementById("data-container");
+    var container = document.getElementById('data-container');
     container.innerText = message;
   })
 }
 
-window.onload = () => document.getElementById("data-button").addEventListener("click",printMessageFromServer);
+window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
