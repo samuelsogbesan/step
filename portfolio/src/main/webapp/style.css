@@ -245,6 +245,7 @@ a {
   background-color:var(--quaternary);
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
