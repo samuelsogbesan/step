@@ -255,13 +255,14 @@ a {
 
 .comments-wrapper {
   height:80vh;
-  width:50%;
+  width:40%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #comments-container {
-  flex:0.7;
+  flex:0.5;
   padding:0;
 }
 
