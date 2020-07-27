@@ -33,6 +33,10 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Comment").addSort("nickname", SortDirection.DESCENDING);
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+
+    List<FormData> comments = new ArrayList<FormData>();
     response.setContentType("text/json;");
     response.getWriter().println(new Gson().toJson(formdata));
   }
