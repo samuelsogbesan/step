@@ -34,6 +34,6 @@ public class DataServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Comment").addSort("nickname", SortDirection.DESCENDING);
     response.setContentType("text/json;");
-    response.getWriter().println("Hello Sam");
+    response.getWriter().println(new Gson().toJson(formdata));
   }
 }
