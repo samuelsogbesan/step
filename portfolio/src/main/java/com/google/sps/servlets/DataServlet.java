@@ -23,6 +23,11 @@ import javax.servlet.http.HttpServletResponse;
 class FormData {
   private String nickname;
   private String comment;
+  
+  public FormData(String nickname, String comment) {
+    this.nickname = nickname;
+    this.comment = comment;
+  }
 }
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
