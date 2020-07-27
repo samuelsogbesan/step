@@ -37,6 +37,12 @@ public class DataServlet extends HttpServlet {
     PreparedQuery results = datastore.prepare(query);
 
     List<FormData> comments = new ArrayList<FormData>();
+    for (Entity entity : results.asIterable()) {
+      String nickname = (String) entity.getProperty("nickname");
+      String comment = (String) entity.getProperty("comment");
+      comments.add(new FormData(nickname, comment));
+    }
+
     response.setContentType("text/json;");
     response.getWriter().println(new Gson().toJson(comments));
   }
