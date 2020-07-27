@@ -92,8 +92,7 @@ body {
   background-color: var(--tertiary);
 }
 
-.navigation-item[data-link='
-'] {
+.navigation-item[data-link='contact'] {
   background-color: var(--quaternary);
 }
 
