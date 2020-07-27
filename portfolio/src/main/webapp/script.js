@@ -21,4 +21,17 @@ const printMessageFromServer = () => {
   });
 }
 
-window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
+//window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
+
+const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
+
+const initialiseNavigation = () => {
+  const navigationItems = document.getElementsByClassName('navigation-item');
+  for (const item of navigationItems) {
+    item.addEventListener('click', function() {
+      navigate(this.getAttribute('data-link'));
+    })
+  }
+}
+
+window.onload = () => initialiseNavigation();
