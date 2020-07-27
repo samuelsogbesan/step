@@ -21,8 +21,9 @@ const addCommentElement = (comment) => {
 const getComments = () => {
   fetch('/data')
   .then(data => data.json())
-  .then(message => {
+  .then(comments => {
     const container = document.getElementById('comments-container');
+    comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
 }
 
