@@ -14,10 +14,9 @@
 
 const printMessageFromServer = () => {
   fetch('/data')
-  .then(data => data.text())
+  .then(data => data.json())
   .then(message => {
-    const container = document.getElementById('data-container');
-    container.innerText = message;
+    const container = document.getElementById('comments-container');
   });
 }
 
