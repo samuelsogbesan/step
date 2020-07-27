@@ -12,6 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const printMessageFromServer = () => {
+  fetch('/data')
+  .then(data => data.text())
+  .then(message => {
+    const container = document.getElementById('data-container');
+    container.innerText = message;
+  });
+}
+
+//window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
+
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
