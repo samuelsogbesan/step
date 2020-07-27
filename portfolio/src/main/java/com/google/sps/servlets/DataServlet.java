@@ -15,6 +15,7 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,8 +46,9 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String nickname = getParameter(request, "nickname", "anon");
     String comment = getParameter(request, "comment", "");
+    FormData formdata = Arrays.asList(new FormData(nickname,comment));
     response.setContentType("application/json;");
-    response.getWriter().println(new Gson().toJson(json));
+    response.getWriter().println(new Gson().toJson(formdata));
   }
 
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
