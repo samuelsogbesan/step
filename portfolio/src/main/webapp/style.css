@@ -49,9 +49,11 @@ body {
   justify-content: center;
 }
 
-.socials-grid>*>img {
-  padding: 1.5rem 0;
+.socials-grid > * > img {
+  filter: invert(1);
   overflow: hidden;
+  padding: 1.5rem 0;
+  width: 50%;
 }
 
 #navigation {
