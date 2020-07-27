@@ -32,4 +32,14 @@ public class DataServlet extends HttpServlet {
     response.setContentType("text/html;");
     response.getWriter().println("Hello Sam");
   }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    System.out.println("Doing POST");
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("nickname","testname");
+    commentEntity.setProperty("comment","testcomment");
+    datastore.put(commentEntity);
+  }
 }
