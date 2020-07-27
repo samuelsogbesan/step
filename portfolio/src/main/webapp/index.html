@@ -95,6 +95,24 @@
           <img src="" alt="selfie of me smiling" class="gallery-card wide">
         </div>
       </div>
+      <div class="section" id="comments">
+        <h2>Got something to say?</h2>
+        <div class="comments-wrapper">
+          <div id="comments-container" class="comment-io">
+          </div>
+          <form id="comments-form" action="/data" method="POST">
+            <div class="form-element">
+              <label>Nickname</label>
+              <input class="comment-io" name="nickname" type="text" placeholder="Sam S" pattern="\w+">
+            </div>
+            <div class="form-element">
+              <label>So, what'd you think?</label>
+              <input class="comment-io" name="comment" type="text" placeholder="I thought it was pretty cool, but..." pattern="\w+" required>
+            </div>
+            <input type="submit" class="comment-io">
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
