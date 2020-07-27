@@ -27,8 +27,6 @@ const getComments = () => {
   });
 }
 
-//window.onload = () => document.getElementById('data-button').addEventListener('click', getComments);
-
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
