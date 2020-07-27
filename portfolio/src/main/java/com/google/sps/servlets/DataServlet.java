@@ -33,7 +33,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String nickname = getParameter(request, "nickname", "");
+    String nickname = getParameter(request, "nickname", "anon");
     String comment = getParameter(request, "comment", "");
     response.setContentType("application/json;");
     response.getWriter().println(new Gson().toJson(json));
