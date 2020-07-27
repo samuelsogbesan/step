@@ -32,6 +32,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
     response.setContentType("text/html;");
     response.getWriter().println("Hello Sam");
   }
