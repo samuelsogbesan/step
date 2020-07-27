@@ -12,6 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const addCommentElement = (comment) => {
+  const el = document.createElement("div");
+  el.className = "comment";
+  return el;
+}
+
 const getComments = () => {
   fetch('/data')
   .then(data => data.json())
