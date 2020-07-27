@@ -38,6 +38,6 @@ public class DataServlet extends HttpServlet {
 
     List<FormData> comments = new ArrayList<FormData>();
     response.setContentType("text/json;");
-    response.getWriter().println(new Gson().toJson(formdata));
+    response.getWriter().println(new Gson().toJson(comments));
   }
 }
