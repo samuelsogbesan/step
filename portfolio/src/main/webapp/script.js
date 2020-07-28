@@ -15,7 +15,17 @@
 const addCommentElement = (comment) => {
   const el = document.createElement("div");
   el.className = "comment";
-  el.innerText = "~ : #".replace("~",comment.nickname).replace("#",comment.comment);
+
+  const nameContainer = document.createElement("p");
+  nameContainer.className = "nickname";
+  nameContainer.innerText = comment.nickname;
+  el.appendChild(nameContainer);
+
+  const commentContainer = document.createElement("p");
+  commentContainer.className = "commentbox";
+  commentContainer.innerText = comment.comment;
+  el.appendChild(commentContainer);
+
   return el;
 }
 
@@ -33,6 +43,7 @@ const getComments = () => {
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
+  getComments();
   const navigationItems = document.getElementsByClassName('navigation-item');
   for (const item of navigationItems) {
     item.addEventListener('click', function() {
