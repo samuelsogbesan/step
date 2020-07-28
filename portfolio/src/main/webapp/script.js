@@ -12,19 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const create = (elementType, elementClassName) => {
+const create = (elementType, elementClassName, elementInnerText) => {
   const element = document.createElement(elementType);
   element.className = elementClassName;
+  if(elementInnerText !== undefined) element.innerText = elementInnerText;
   return element;
 }
 
 const addCommentElement = (comment) => {
   const el = create("div", "comment");
-  const nameContainer = create("p", "nickname");
-  const commentContainer = create("p", "commentbox");
-
-  nameContainer.innerText = comment.nickname;
-  commentContainer.innerText = comment.comment;
+  const nameContainer = create("p", "nickname",comment.nickname);
+  const commentContainer = create("p", "commentbox",comment.comment);
 
   el.appendChild(nameContainer);
   el.appendChild(commentContainer);
