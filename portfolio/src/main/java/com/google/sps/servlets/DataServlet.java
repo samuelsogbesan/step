@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 /** Container class for Form data */
 class FormData {
   private String nickname; //The alias of the commenter
-  private String comment; // The assocaited comment
+  private String comment; // The associated comment
   
   public FormData(String nickname, String comment) {
     this.nickname = nickname;
