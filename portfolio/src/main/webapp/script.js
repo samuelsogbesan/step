@@ -12,6 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const create = (elementType, elementClassName) => {
+  const element = document.createElement(elementType);
+  element.className = elementClassName;
+  return element;
+}
+
 const addCommentElement = (comment) => {
   const el = document.createElement("div");
   el.className = "comment";
