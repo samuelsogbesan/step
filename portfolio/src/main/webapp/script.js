@@ -15,6 +15,7 @@
 const create = (elementType, elementClassName, elementParent, elementInnerText) => {
   const element = document.createElement(elementType);
   element.className = elementClassName;
+  
   if(elementInnerText !== undefined) element.innerText = elementInnerText;
   if(elementParent !== undefined) elementParent.appendChild(element);
   return element;
