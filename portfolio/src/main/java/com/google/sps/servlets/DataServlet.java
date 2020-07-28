@@ -14,6 +14,14 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+import java.io.IOException;
+import java.util.ArrayList;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.Arrays;
@@ -39,8 +47,19 @@ class FormData {
 public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("Hello Sam");
+    Query query = new Query("Comment").addSort("nickname", SortDirection.DESCENDING);
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+
+    List<FormData> comments = new ArrayList<FormData>();
+    for (Entity entity : results.asIterable()) {
+      String nickname = (String) entity.getProperty("nickname");
+      String comment = (String) entity.getProperty("comment");
+      comments.add(new FormData(nickname, comment));
+    }
+
+    response.setContentType("text/json;");
+    response.getWriter().println(new Gson().toJson(comments));
   }
 
   @Override
