@@ -102,8 +102,9 @@ body {
   font-weight: bold;
   left: 0;
   margin: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
+  z-index:1;
 }
 
 #intro {
