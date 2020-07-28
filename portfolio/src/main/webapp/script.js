@@ -25,8 +25,8 @@ const create = (elementType, elementClassName, elementParent, elementInnerText) 
 
 const addCommentElement = (comment) => {
   const el = create('div', 'comment');
-  create('p', 'nickname',el, comment.nickname);
-  create('p', 'commentbox',el, comment.comment);
+  create('p', 'nickname', el, comment.nickname);
+  create('p', 'commentbox', el, comment.comment);
 
   return el;
 }
