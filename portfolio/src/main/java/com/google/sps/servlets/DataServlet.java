@@ -33,7 +33,7 @@ public class DataServlet extends HttpServlet {
     response.getWriter().println("Hello Sam");
   }
 
-  public void updateDatastore(String nickname, String comment) {
+  private void updateDatastore(String nickname, String comment) {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("nickname",nickname);
