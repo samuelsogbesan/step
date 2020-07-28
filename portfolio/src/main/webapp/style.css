@@ -206,6 +206,7 @@ a {
   display: none;
   filter: invert(1);
   font-size: 1rem;
+  font-style: italic;
 }
 
 .card:hover {
