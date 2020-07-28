@@ -19,7 +19,7 @@ const printMessageFromServer = () => {
     const container = document.getElementById('data-container');
     container.innerText = message;
   });
-}
+};
 
 //window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
 
@@ -37,6 +37,6 @@ const initialiseNavigation = () => {
   sectionSelector.addEventListener('change', function (e) {
     navigate(e.target.value);
   });
-}
+};
 
 window.onload = () => initialiseNavigation();
