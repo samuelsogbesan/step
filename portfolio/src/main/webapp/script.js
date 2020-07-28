@@ -24,14 +24,14 @@ const create = (elementType, elementClassName, elementParent, elementInnerText) 
 }
 
 const addCommentElement = (comment) => {
-  const el = create("div", "comment");
-  create("p", "nickname",el,comment.nickname);
-  create("p", "commentbox",el,comment.comment);
+  const el = create('div', 'comment');
+  create('p', 'nickname',el,comment.nickname);
+  create('p', 'commentbox',el,comment.comment);
 
   return el;
 }
 
-const json = (data) => [{nickname:"James",comment:"I like it here!"}];
+const json = (data) => [{nickname:'James',comment:'I like it here!'}];
 
 const getComments = () => {
   fetch('/data')
