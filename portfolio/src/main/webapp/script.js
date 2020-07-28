@@ -33,8 +33,8 @@ const initialiseNavigation = () => {
     })
   };
   
-  const sectionSelector = document.getElementById("section-selector");
-  sectionSelector.addEventListener("change", function(e) {
+  const sectionSelector = document.getElementById('section-selector');
+  sectionSelector.addEventListener('change', function (e) {
     navigate(e.target.value);
   });
 }
