@@ -19,17 +19,14 @@ const create = (elementType, elementClassName) => {
 }
 
 const addCommentElement = (comment) => {
-  const el = document.createElement("div");
-  el.className = "comment";
+  const el = create("div", "comment");
+  const nameContainer = create("p", "nickname");
+  const commentContainer = create("p", "commentbox");
 
-  const nameContainer = document.createElement("p");
-  nameContainer.className = "nickname";
   nameContainer.innerText = comment.nickname;
-  el.appendChild(nameContainer);
-
-  const commentContainer = document.createElement("p");
-  commentContainer.className = "commentbox";
   commentContainer.innerText = comment.comment;
+
+  el.appendChild(nameContainer);
   el.appendChild(commentContainer);
 
   return el;
