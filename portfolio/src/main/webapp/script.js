@@ -12,12 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* Creates a DOM element with specified type, className, and optionally parent and innerText */
 const create = (elementType, elementClassName, elementParent, elementInnerText) => {
   const element = document.createElement(elementType);
   element.className = elementClassName;
-  
+
   if(elementInnerText !== undefined) element.innerText = elementInnerText;
   if(elementParent !== undefined) elementParent.appendChild(element);
+  
   return element;
 }
 
