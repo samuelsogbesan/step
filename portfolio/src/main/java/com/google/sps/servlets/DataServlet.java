@@ -36,8 +36,8 @@ public class DataServlet extends HttpServlet {
   private void updateDatastore(String nickname, String comment) {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     Entity commentEntity = new Entity("Comment");
-    commentEntity.setProperty("nickname",nickname);
-    commentEntity.setProperty("comment",comment);
+    commentEntity.setProperty("nickname", nickname);
+    commentEntity.setProperty("comment", comment);
     datastore.put(commentEntity);
   }
 
