@@ -45,7 +45,6 @@ const getComments = () => {
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
-  getComments();
   const navigationItems = document.getElementsByClassName('navigation-item');
   for (const item of navigationItems) {
     item.addEventListener('click', function() {
