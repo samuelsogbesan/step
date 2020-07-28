@@ -15,12 +15,15 @@
 const addCommentElement = (comment) => {
   const el = document.createElement("div");
   el.className = "comment";
+  el.innerText = "~ : #".replace("~",comment.nickname).replace("#",comment.comment);
   return el;
 }
 
+const json = (data) => [{nickname:"James",comment:"I like it here!"}];
+
 const getComments = () => {
   fetch('/data')
-  .then(data => data.json())
+  .then(data => json())
   .then(comments => {
     const container = document.getElementById('comments-container');
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
