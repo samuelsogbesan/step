@@ -31,7 +31,12 @@ const initialiseNavigation = () => {
     item.addEventListener('click', function() {
       navigate(this.getAttribute('data-link'));
     })
-  }
+  };
+  
+  const sectionSelector = document.getElementById("section-selector");
+  sectionSelector.addEventListener("change", function(e) {
+    navigate(e.target.value);
+  });
 }
 
 window.onload = () => initialiseNavigation();
