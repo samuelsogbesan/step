@@ -11,3 +11,27 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+const printMessageFromServer = () => {
+  fetch('/data')
+  .then(data => data.text())
+  .then(message => {
+    const container = document.getElementById('data-container');
+    container.innerText = message;
+  });
+}
+
+//window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
+
+const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
+
+const initialiseNavigation = () => {
+  const navigationItems = document.getElementsByClassName('navigation-item');
+  for (const item of navigationItems) {
+    item.addEventListener('click', function() {
+      navigate(this.getAttribute('data-link'));
+    })
+  }
+}
+
+window.onload = () => initialiseNavigation();

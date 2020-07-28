@@ -42,45 +42,45 @@
       <!-- TODO(samsog@google.com):Merge Projects Section -->
       <div class="section" id="projects">
         <!-- TODO: Fill cards with hrefs, headings and subheadings -->
-        <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
+        <a href="http://samuelsogbesan.github.io/portfolio" class="card">
+        <span class="card-heading">My Other Portfolio</span>
+        <span class="card-subheading">I made a portfolio w/ React!</span>
+        </a>
+        <a href="https://github.com/samuelsogbesan/permutation-palette-picker" class="card">
+        <span class="card-heading">Permutation Palette Picker</span>
+        <span class="card-subheading">An RGB colour generator based on Permutations!</span>
+        </a>
+        <a href="https://github.com/samuelsogbesan/2048-game" class="card">
+        <span class="card-heading">2048 Clone</span>
+        <span class="card-subheading">A text clone of the popular mobile game!</span>
+        </a>
+        <a href="https://github.com/Hazzaboy234/GenesisVolunteerPortal" class="card">
+        <span class="card-heading">Genesis Trust Volunteer Portal</span>
+        <span class="card-subheading">A volunteering portal for a local charity</span>
         </a>
         <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
+        <span class="card-heading">InfluencerAds</span>
+        <span class="card-subheading">An Ad platform for matching businesses and influencers</span>
         </a>
-        <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
-        </a>
-        <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
-        </a>
-        <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
-        </a>
-        <a href="" class="card">
-          <span class="card-heading">InfluencerAds</span>
-          <span class="card-subheading">An Add platform for...</span>
+        <a href="https://github.com/samuelsogbesan/tic-tac-toe-demo" class="card">
+        <span class="card-heading">Tic-Tac-Toe</span>
+        <span class="card-subheading">A React version of Tic-Tac-Toe!</span>
         </a>
       </div>
       <!-- TODO(samsog@google.com):Merge Contact Section -->
       <div class="section" id="contact">
         <h1>Check me out!</h1>
         <div class="socials-grid">
-          <a href="">
-            <img alt="Github" src="https://via.placeholder.com/150/">
+          <a href="https://github.com/samuelsogbesan">
+            <img alt="Github" src="/images/github.svg">
             <span>/samuelsogbesan</span>
           </a>
-          <a href="">
-            <img alt="LinkedIn" src="https://via.placeholder.com/150/">
+          <a href="https://uk.linkedin.com/in/samuel-sogbesan">
+            <img alt="LinkedIn" src="/images/linkedin.svg">
             <span>/samuel-sogbesan</span>
           </a>
-          <a href="">
-            <img alt="Gmail" src="https://via.placeholder.com/150/">
+          <a href="mailto:samsog@google.com">
+            <img alt="Gmail" src="/images/gmail.svg">
             <span>samsog@google.com</span>
           </a>
         </div>
@@ -93,6 +93,24 @@
           <img src="" alt="selfie of me and my friends" class="gallery-card">
           <img src="" alt="selfie of me in a park" class="gallery-card">
           <img src="" alt="selfie of me smiling" class="gallery-card wide">
+        </div>
+      </div>
+      <div class="section" id="comments">
+        <h2>Got something to say?</h2>
+        <div class="comments-wrapper">
+          <div id="comments-container" class="comment-io">
+          </div>
+          <form id="comments-form" action="/data" method="POST">
+            <div class="form-element">
+              <label>Nickname</label>
+              <input class="comment-io" name="nickname" type="text" placeholder="Sam S" pattern="\w+">
+            </div>
+            <div class="form-element">
+              <label>So, what'd you think?</label>
+              <input class="comment-io" name="comment" type="text" placeholder="I thought it was pretty cool, but..." pattern="\w+" required>
+            </div>
+            <input type="submit" class="comment-io">
+          </form>
         </div>
       </div>
     </div>
