@@ -205,6 +205,7 @@ a {
 .card-subheading {
   display: none;
   filter: invert(1);
+  font-size: 1rem;
 }
 
 .card:hover {
