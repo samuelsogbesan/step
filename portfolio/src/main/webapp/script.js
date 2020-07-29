@@ -31,12 +31,11 @@ const addCommentElement = (comment) => {
   return commentElement;
 }
 
-const json = (data) => [{nickname:'James', comment:'I like it here!'}];
-
 const getComments = () => {
   fetch('/data')
-  .then(data => json())
+  .then(data => data.json())
   .then(comments => {
+    console.log(comments);
     const container = document.getElementById('comments-container');
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
