@@ -53,4 +53,13 @@ const initialiseNavigation = () => {
   }
 }
 
-window.onload = () => initialiseNavigation();
+const onload = () => {
+  new Promise((resolve, reject) => {
+    getComments();
+    resolve(true);
+    reject(false);
+  })
+  .then(_ => initialiseNavigation());
+}
+
+window.onload = () => onload();
