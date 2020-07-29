@@ -60,6 +60,6 @@ const onload = () => {
     reject(false);
   })
   .then(_ => initialiseNavigation());
-}
+};
 
 window.onload = () => onload();
