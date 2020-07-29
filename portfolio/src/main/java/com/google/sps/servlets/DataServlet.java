@@ -78,4 +78,17 @@ public class DataServlet extends HttpServlet {
     }
     return value;
   }
+
+  private void updateDatastore(String nickname, String comment) {
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("nickname", nickname);
+    commentEntity.setProperty("comment", comment);
+    datastore.put(commentEntity);
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    updateDatastore("placeholder_nickname", "placeholder_comment");
+  }
 }
