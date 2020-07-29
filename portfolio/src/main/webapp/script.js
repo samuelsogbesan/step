@@ -12,16 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const printMessageFromServer = () => {
-  fetch('/data')
-  .then(data => data.text())
-  .then(message => {
-    const container = document.getElementById('data-container');
-    container.innerText = message;
-  });
+/* Creates a DOM element with specified type, className, and optionally parent and innerText */
+const create = (elementType, elementClassName, elementParent, elementInnerText) => {
+  const element = document.createElement(elementType);
+  element.className = elementClassName;
+
+  if(elementInnerText !== undefined) element.innerText = elementInnerText;
+  if(elementParent !== undefined) elementParent.appendChild(element);
+  
+  return element;
 }
 
-//window.onload = () => document.getElementById('data-button').addEventListener('click', printMessageFromServer);
+const addCommentElement = (comment) => {
+  const commentElement = create('div', 'comment');
+  create('p', 'nickname', commentElement, comment.nickname);
+  create('p', 'commentbox', commentElement, comment.comment);
+
+  return commentElement;
+}
+
+const json = (data) => [{nickname:'James', comment:'I like it here!'}];
+
+const getComments = () => {
+  fetch('/data')
+  .then(data => json())
+  .then(comments => {
+    const container = document.getElementById('comments-container');
+    comments.forEach(comment => container.appendChild(addCommentElement(comment)));
+  });
+}
 
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 

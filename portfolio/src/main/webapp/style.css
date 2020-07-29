@@ -28,8 +28,8 @@ body {
 }
 
 #contact {
-  background-color:var(--tertiary);
-  color:white;
+  background-color: var(--tertiary);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -80,7 +80,7 @@ body {
   filter: invert(1);
 }
 
-.navigation-item[data-link='introduction'] {
+.navigation-item[data-link='intro'] {
   background-color: var(--primary);
 }
 
@@ -96,9 +96,14 @@ body {
   background-color: var(--quaternary);
 }
 
+#intro {
+  background: var(--primary);
+}
+
 #intro,
 .intro-wrapper {
   align-items: center;
+  color: white;
   display: flex;
   justify-content: center;
 }
@@ -109,12 +114,12 @@ body {
   width: 70%;
 }
 
-.intro-wrapper > * {
+.intro-wrapper>* {
   align-items: center;
   display: flex;
   flex-direction: column;
   flex: 0.5;
-  font-size:1.25rem;
+  font-size: 1.25rem;
   height: 100%;
   justify-content: space-evenly;
   line-height: 2rem;
@@ -127,8 +132,8 @@ body {
 }
 
 .intro-wrapper h3 {
-  font: lighter italic "Roboto Light";
-  margin:0;
+  font: italic 2rem 'Roboto Light';
+  margin: 0;
 }
 
 .intro-wrapper > * :first-child {
@@ -136,6 +141,7 @@ body {
 }
 
 .intro-wrapper > * :last-child {
+  color: var(--primary);
   flex: 0.8;
 }
 
@@ -148,6 +154,7 @@ body {
 .intro-wrapper p {
   background-color: white;
   text-align: center;
+  padding: 1rem;
 }
 
 .intro-content > img {
@@ -241,4 +248,66 @@ a {
 
 .gallery-card.wide {
   grid-column: span 2;
+}
+
+#comments {
+  align-items: center;
+  background-color: var(--quaternary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#comments>h2 {
+  color: white;
+  margin: 0;
+}
+
+.comments-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+  width: 40%;
+}
+
+#comments-container {
+  flex: 0.5;
+  padding: 0;
+}
+
+#comments-form {
+  align-items: stretch;
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.comment-io {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0.75rem;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#comments-form input:required::placeholder {
+  font-weight: bold;
+}
+
+#comments-form>input[type='submit'] {
+  align-self: center;
+  background: #45F395;
+  border: none;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
 }
