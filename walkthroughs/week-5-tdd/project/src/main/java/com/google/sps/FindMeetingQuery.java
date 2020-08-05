@@ -15,7 +15,6 @@
 package com.google.sps;
 
 import com.google.sps.TimeRange;
-import java.util.Arrays;
 import java.util.Collection;
 
 public final class FindMeetingQuery {
@@ -34,17 +33,6 @@ public final class FindMeetingQuery {
     final static int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
     final static int THIRTY_MINUTES = 30; //The divisor used to split up the day
     
-    // Comparator used to sort events by TimeRange.
-    Comparator<Event> SORT_BY_RANGE_START = new Comparator<Event>() {
-      @Override
-      public int compare(Event a, Event b) {
-        TimeRange aTime = a.getWhen();
-        TimeRange bTime = b.getWhen();
-        return TimeRange.ORDER_BY_START.compare(aTime,bTime);
-      }
-    };
-    Arrays.sort(events,SORT_BY_RANGE_START);
- 
     int[] freeTimes = new int[slots]; // Output array of free times in the day.
 
     // Loop through events and mark slots as occupied if the event is attended.
