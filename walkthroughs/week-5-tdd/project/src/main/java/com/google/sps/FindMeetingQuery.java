@@ -28,7 +28,7 @@ public final class FindMeetingQuery {
     Collection<String> requestAttendees = request.getAttendees();
     for(String attendee : eventAttendees) if(requestAttendees.contains(attendee)) return true;
 
-    return false; // Fallback if no attendees are found in the both the meeting and the request
+    return false; // Fallback if no attendees are found in the both the event and the meeting request
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
