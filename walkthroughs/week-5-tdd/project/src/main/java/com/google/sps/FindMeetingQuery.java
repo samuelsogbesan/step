@@ -14,9 +14,56 @@
 
 package com.google.sps;
 
+import com.google.sps.TimeRange;
+import java.util.Arrays;
 import java.util.Collection;
 
 public final class FindMeetingQuery {
+  /**
+    Determines the free spaces within the working day not occupied by attended events
+    An event is considered attended if isAttended(event,request) returns true.
+    // Attended Event:     |--B--|
+    // Day     : |---------------------|
+    // Output : |----------1111111----|
+
+    @param Event[] events the (potentially unattended) events during the day
+    @param MeetingRequest request the meeting request used to determine event attendence.
+    @returns int[48] representing the day in 30 minute intervals, with occupied slots filled with a non-zero value (1)
+  */
+  private static int[] getFreeTimes(Event[] events, MeetingRequest request) {
+    final static int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
+    final static int THIRTY_MINUTES = 30; //The divisor used to split up the day
+    
+    // Comparator used to sort events by TimeRange.
+    Comparator<Event> SORT_BY_RANGE_START = new Comparator<Event>() {
+      @Override
+      public int compare(Event a, Event b) {
+        TimeRange aTime = a.getWhen();
+        TimeRange bTime = b.getWhen();
+        return TimeRange.ORDER_BY_START.compare(aTime,bTime);
+      }
+    };
+    Arrays.sort(events,SORT_BY_RANGE_START);
+ 
+    int[] freeTimes = new int[slots]; // Output array of free times in the day.
+
+    // Loop through events and mark slots as occupied if the event is attended.
+    for(int i = 0  i < events.length  i ++) {
+      // If an event is not attended, it does not need to be considered.
+      if(!isAttended(events[i], request)) continue;
+
+      TimeRange eventTime = events[i].getWhen();
+      int eventStart = eventTime.start() / THIRTY_MINUTES;
+      int eventEnd = (eventTime.start() + eventTime.duration()) / THIRTY_MINUTES - 1;
+      int eventDuration = eventTime.duration() / THIRTY_MINUTES;
+
+      // Indicate all the slots between eventStart and EventEnd as occupied.
+      for(int j = eventStart  j <= eventEnd && j < slots; j++) freeTimes[j] = 1;
+    }
+ 
+    return freeTimes;
+  }
+
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
     throw new UnsupportedOperationException("TODO: Implement this method.");
   }
