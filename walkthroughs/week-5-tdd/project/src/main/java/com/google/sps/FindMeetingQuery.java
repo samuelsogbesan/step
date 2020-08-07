@@ -36,7 +36,7 @@ public final class FindMeetingQuery {
     boolean[] freeTimes = new boolean[slots]; // Output array of free times in the day.
 
     // Loop through events and mark slots as occupied if the event is attended.
-    for(int i = 0  i < events.length  i ++) {
+    for(int i = 0; i < events.length; i ++) {
       // If an event is not attended, it does not need to be considered.
       if(!isAttended(events[i], request)) continue;
 
