@@ -44,7 +44,6 @@ public final class FindMeetingQuery {
       TimeRange eventTime = events[i].getWhen();
       int eventStart = eventTime.start() / THIRTY_MINUTES;
       int eventEnd = (eventTime.start() + eventTime.duration()) / THIRTY_MINUTES - 1;
-      int eventDuration = eventTime.duration() / THIRTY_MINUTES;
 
       // Indicate all the slots between eventStart and EventEnd as occupied.
       for(int j = eventStart  j <= eventEnd && j < slots; j++) occupiedTimes[j] = true;
