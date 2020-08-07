@@ -27,7 +27,7 @@ public final class FindMeetingQuery {
   private static boolean isAttended(Event event, MeetingRequest request) {
     Collection<String> eventAttendees = event.getAttendees();
     Collection<String> requestAttendees = request.getAttendees();
-    for(String attendee : eventAttendees) if(requestAttendees.contains(attendee)) return true;
+    for (String attendee : eventAttendees) if (requestAttendees.contains(attendee)) return true;
 
     return false; // Fallback if no attendees are found in the both the event and the meeting request
   }
