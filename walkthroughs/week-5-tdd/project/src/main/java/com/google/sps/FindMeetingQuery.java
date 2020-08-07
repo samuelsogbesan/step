@@ -21,7 +21,7 @@ public final class FindMeetingQuery {
     * Returns whether or not an event is attended by the required attendees from the Meeting Request
     *
     @param Event event The input event to compare against
-    @param Request request The subject meeting request
+    @param MeetingRequest request The subject meeting request
     @return a boolean value that is true if the event and request have overlapping attendees.
   */
   private static boolean isAttended(Event event, MeetingRequest request) {
