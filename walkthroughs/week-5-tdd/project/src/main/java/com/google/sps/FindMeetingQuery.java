@@ -21,6 +21,7 @@ public final class FindMeetingQuery {
   /**
     * Determines the spaces within a 24 hour period occupied by attended events.
     * An event is considered attended if isAttended(event,request) returns true.
+    *
     * // Attended Event:     |--B--|
     * // Day     : |---------------------|
     * // Output  : |----------1111111----|
