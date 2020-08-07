@@ -36,7 +36,7 @@ public final class FindMeetingQuery {
     
     boolean[] occupiedTimes = new boolean[slots]; // Output array of occupied times in the day.
 
-    // Loop through events and mark slots as occupied if the event is attended.
+    // Mark slots in occupiedTimes as true if an attended event occurs there
     for (int i = 0; i < events.length; i++) {
       // If an event is not attended, it does not need to be considered.
       if (!isAttended(events[i], request)) continue;
