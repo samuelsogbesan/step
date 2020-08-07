@@ -24,7 +24,7 @@ public final class FindMeetingQuery {
     *
     * // Attended Event:     |--B--|
     * // Day     : |---------------------|
-    * // Output  : |----------1111111----|
+    * // Output  : |---------1111111----|
 
     @param Event[] events the (potentially unattended) events during the day
     @param MeetingRequest request the meeting request used to determine event attendence.
