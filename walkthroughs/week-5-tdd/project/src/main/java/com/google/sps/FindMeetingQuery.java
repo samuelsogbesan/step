@@ -46,7 +46,7 @@ public final class FindMeetingQuery {
       int eventEnd = (eventTime.start() + eventTime.duration()) / THIRTY_MINUTES - 1;
 
       // Indicate all the slots between eventStart and EventEnd as occupied.
-      for(int j = eventStart  j <= eventEnd && j < slots; j++) occupiedTimes[j] = true;
+      for(int j = eventStart; j <= eventEnd && j < slots; j++) occupiedTimes[j] = true;
     }
  
     return occupiedTimes;
