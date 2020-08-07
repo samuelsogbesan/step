@@ -33,7 +33,7 @@ public final class FindMeetingQuery {
     final static int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
     final static int THIRTY_MINUTES = 30; // The divisor used to split up the day
     
-    boolean[] occupiedTimes = new boolean[slots]; // Output array of free times in the day.
+    boolean[] occupiedTimes = new boolean[slots]; // Output array of occupied times in the day.
 
     // Loop through events and mark slots as occupied if the event is attended.
     for(int i = 0; i < events.length; i ++) {
