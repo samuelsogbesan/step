@@ -27,7 +27,7 @@ public final class FindMeetingQuery {
 
     @param Event[] events the (potentially unattended) events during the day
     @param MeetingRequest request the meeting request used to determine event attendence.
-    @returns boolean[48] representing the day in 30 minute intervals, with occupied slots filled with a non-zero value (1)
+    @return boolean[48] representing the day in 30 minute intervals, with occupied slots filled with a non-zero value (1)
   */
   private static boolean[] getFreeTimes(Event[] events, MeetingRequest request) {
     final static int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
