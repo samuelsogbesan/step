@@ -29,11 +29,11 @@ public final class FindMeetingQuery {
     @param MeetingRequest request the meeting request used to determine event attendence.
     @return boolean[48] representing the day in 30 minute intervals, with occupied slots filled with true.
   */
-  private static boolean[] getFreeTimes(Event[] events, MeetingRequest request) {
+  private static boolean[] getOccupiedTimes(Event[] events, MeetingRequest request) {
     final static int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
     final static int THIRTY_MINUTES = 30; //The divisor used to split up the day
     
-    boolean[] freeTimes = new boolean[slots]; // Output array of free times in the day.
+    boolean[] occupiedTimes = new boolean[slots]; // Output array of free times in the day.
 
     // Loop through events and mark slots as occupied if the event is attended.
     for(int i = 0; i < events.length; i ++) {
@@ -46,10 +46,10 @@ public final class FindMeetingQuery {
       int eventDuration = eventTime.duration() / THIRTY_MINUTES;
 
       // Indicate all the slots between eventStart and EventEnd as occupied.
-      for(int j = eventStart  j <= eventEnd && j < slots; j++) freeTimes[j] = true;
+      for(int j = eventStart  j <= eventEnd && j < slots; j++) occupiedTimes[j] = true;
     }
  
-    return freeTimes;
+    return occupiedTimes;
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
