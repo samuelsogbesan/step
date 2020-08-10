@@ -50,7 +50,7 @@ public final class FindMeetingQuery {
       boolean slot = occupiedTimes[endPointer];
 
       // If we find an occupied slot, set our gap upper bound to that slot.
-      if(slot == true) upperBound = endPointer; //The last free slot between lowerBound and endPointer
+      if(slot == true) upperBound = endPointer;
       else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; //Include bound in calculation. if the last value is an 0, we need to increase range to include it in difference
  
       if(slot == true || endPointer == occupiedTimes.length-1) {
