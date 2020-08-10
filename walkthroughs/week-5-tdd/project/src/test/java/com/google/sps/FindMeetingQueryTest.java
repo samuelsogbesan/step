@@ -274,6 +274,7 @@ public final class FindMeetingQueryTest {
   @Test
   public void noEventsToOccupy() {
     // Use an empty events list.
+    
     Collection<Event> events = NO_EVENTS;
     Event[] eventsArray = events.toArray(new Event[events.size()]);
 
@@ -287,6 +288,20 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void noAttendedEvents() {
+    // Pass in events, but have no events that have attendes overlapping with the meeting request.
+    // These events should not be considered
+
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
+            Arrays.asList(PERSON_A)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+ 
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
+ 
+    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] expected = new boolean[48];
+ 
+    Assert.assertTrue(Arrays.equals(expected, actual));
   }
 
   @Test
