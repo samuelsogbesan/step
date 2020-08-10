@@ -273,7 +273,7 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void noEventsToOccupy() {
-    // Use an empty events list.
+    // Pass in no events. This should result in no slots being considered as occupied.
 
     Collection<Event> events = NO_EVENTS;
     Event[] eventsArray = events.toArray(new Event[events.size()]);
@@ -306,6 +306,9 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void onlyAttendedEventsConsidered() {
+    // Pass in a mixture of attended and unattended events.
+    // Only the attended events should be considered.
+
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
             Arrays.asList(PERSON_A)),
@@ -327,7 +330,10 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void singleSlotEvent() {
-    // Boundary case: Attended Events that elapse 30 minutes should only occupy one slot.
+    // Boundary case
+    // Pass in attended events that elapse 30 minutes.
+    // These should only occupy one slot (respectively, with no overlap).
+
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0930AM, DURATION_30_MINUTES),
             Arrays.asList(PERSON_B)));
@@ -344,7 +350,9 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void fulldayEventConsidered() {
-    // Boundary case: If a day spans the full length the day, all slots should be occupied (true)
+    // Boundary case
+    // If an event spans the full length the day, all slots should be considered occupied.
+
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TimeRange.END_OF_DAY, true),
             Arrays.asList(PERSON_B)));
