@@ -272,23 +272,33 @@ public final class FindMeetingQueryTest {
   }
 
   @Test
-  public void noOccupiedTime() {
+  public void noEventsToOccupy() {
+    //No events are passed in
+    Collection<Event> events = NO_EVENTS;
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
 
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
+
+    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] expected = new boolean[48];
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
   }
 
   @Test
-  public void allTimeOccupied() {
-
+  public void noAttendedEvents() {
   }
 
   @Test
-  public void oneTimeOccupied() {
-
+  public void onlyAttendedEventsConsidered() {
   }
 
   @Test
-  public void someTimeOccupied() {
+  public void singleSlotEventsConsidered() {
+  }
 
+  @Test
+  public void fulldayEventConsidered() {
   }
 
 } 
