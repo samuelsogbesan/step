@@ -32,12 +32,12 @@ public final class FindMeetingQuery {
     * a value at a specific index indicates whether the corresponding interval is occupied.
   */
   protected static boolean[] getOccupiedTimes(Event[] events, MeetingRequest request) {
-    final int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
-    final int THIRTY_MINUTES = 30; // The divisor used to split up the day
+    final int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day.
+    final int THIRTY_MINUTES = 30; // The divisor used to split up the day.
     
     boolean[] occupiedTimes = new boolean[slots]; // Output array of occupied times in the day.
 
-    // Mark slots in occupiedTimes as true if an attended event occurs there
+    // Mark slots in occupiedTimes as true if an attended event occurs there.
     for (int i = 0; i < events.length; i++) {
       // If an event is not attended, it does not need to be considered.
       if (!isAttended(events[i], request)) continue;
