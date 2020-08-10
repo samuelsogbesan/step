@@ -321,12 +321,25 @@ public final class FindMeetingQueryTest {
     int from = TIME_0930AM / 30;
     int to = TIME_0930AM / 30 + DURATION_2_HOUR / 30; 
     Arrays.fill(expected, from, to, true);
-    
+
     Assert.assertTrue(Arrays.equals(expected, actual));
   }
 
   @Test
   public void singleSlotEventsConsidered() {
+    // Edge case: Attended Events that elapse 30 minutes occupy only one slot.
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartDuration(TIME_0930AM, DURATION_30_MINUTES),
+            Arrays.asList(PERSON_B)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
+
+    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] expected = new boolean[48];
+    expected[TIME_0930AM / 30] = true;
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
   }
 
   @Test
