@@ -280,7 +280,7 @@ public final class FindMeetingQueryTest {
 
     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
 
-    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
     boolean[] expected = new boolean[48];
 
     Assert.assertTrue(Arrays.equals(expected, actual));
@@ -298,7 +298,7 @@ public final class FindMeetingQueryTest {
  
     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
  
-    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
     boolean[] expected = new boolean[48];
  
     Assert.assertTrue(Arrays.equals(expected, actual));
@@ -318,7 +318,7 @@ public final class FindMeetingQueryTest {
  
     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
  
-    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
     boolean[] expected = new boolean[48];
 
     int from = TIME_0930AM / 30;
@@ -341,7 +341,7 @@ public final class FindMeetingQueryTest {
 
     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
 
-    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
     boolean[] expected = new boolean[48];
     expected[TIME_0930AM / 30] = true;
 
@@ -360,7 +360,7 @@ public final class FindMeetingQueryTest {
 
     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
 
-    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
     boolean[] expected = new boolean[48];
     Arrays.fill(expected,true);
 
