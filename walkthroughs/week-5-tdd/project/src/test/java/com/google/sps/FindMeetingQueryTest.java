@@ -344,6 +344,19 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void fulldayEventConsidered() {
+    // Boundary case: If a day spans the full length the day, all slots should be occupied (true)
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TimeRange.END_OF_DAY, true),
+            Arrays.asList(PERSON_B)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
+
+    boolean[] actual = query.getOccupiedTimes(eventsArray, request);
+    boolean[] expected = new boolean[48];
+    Arrays.fill(expected,true);
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
   }
 
 } 
