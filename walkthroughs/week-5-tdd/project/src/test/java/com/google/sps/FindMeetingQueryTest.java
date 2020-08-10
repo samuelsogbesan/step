@@ -273,7 +273,7 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void noEventsToOccupy() {
-    //No events are passed in
+    // Use an empty events list.
     Collection<Event> events = NO_EVENTS;
     Event[] eventsArray = events.toArray(new Event[events.size()]);
 
