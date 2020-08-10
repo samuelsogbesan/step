@@ -332,3 +332,10 @@ a {
   margin: 0;
   word-break: break-all;
 }
+
+.nickname {
+  background: white;
+  filter: invert(1);
+  flex: 0.3;
+  padding: 0.2rem 0;
+}
