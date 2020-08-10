@@ -34,15 +34,15 @@ public final class FindMeetingQuery {
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
     List<TimeRange> times = new ArrayList<TimeRange>(); // Output list for possible meeting times
-    Event[] eventsArray = events.toArray(new Event[events.size()]); // array of events
+    Event[] eventsArray = events.toArray(new Event[events.size()]); // Array of events
     long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots
     
     if(duration > 47) return times; // If the duration is out of bounds, we don't need to add any times.
  
     boolean[] occupiedTimes = getOccupiedTimes(eventsArray, request);
  
-    int lowerBound = 0; // Start of Time Gap (first 0 past endPointer)
-    int upperBound = 0; // End of Time Gap (last 0 before first 1 after endpoint)
+    int lowerBound = 0; // Start of Time Gap (first unoccupied slot past endPointer)
+    int upperBound = 0; // End of Time Gap (last unoccupied slot before first occupied slot after endpoint)
  
     // Loop through array and find gaps between free slots.
     // If gaps are sufficiently large, add them to list.
