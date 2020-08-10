@@ -270,5 +270,27 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }
-}
+
+  @Test
+  public void noOccupiedTime() {
+
+  }
+
+  @Test
+  public void allTimeOccupied() {
+
+  }
+
+  @Test
+  public void oneTimeOccupied() {
+
+  }
+
+  @Test
+  public void someTimeOccupied() {
+
+  }
+
+} 
+
 
