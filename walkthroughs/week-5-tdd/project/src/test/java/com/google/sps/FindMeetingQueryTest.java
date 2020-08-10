@@ -326,8 +326,8 @@ public final class FindMeetingQueryTest {
   }
 
   @Test
-  public void singleSlotEventsConsidered() {
-    // Edge case: Attended Events that elapse 30 minutes occupy only one slot.
+  public void singleSlotEvent() {
+    // Edge case: Attended Events that elapse 30 minutes should only occupy one slot.
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0930AM, DURATION_30_MINUTES),
             Arrays.asList(PERSON_B)));
