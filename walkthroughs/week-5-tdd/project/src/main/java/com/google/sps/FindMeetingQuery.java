@@ -33,6 +33,34 @@ public final class FindMeetingQuery {
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    throw new UnsupportedOperationException("TODO: Implement this method.");
+    List<TimeRange> times = new ArrayList<TimeRange>(); // List out possible meeting times
+    Event[] arr = events.toArray(new Event[events.size()]); // array of events
+    long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots
+    
+    if(duration > 47) return times; // If the duration is out of bounds, we don't need to add any times.
+ 
+    boolean[] occupiedTimes = getOccupiedTimes(arr, request);
+ 
+    int lowerBound = 0; // Start of Time Gap
+    int upperBound = 0; // End of Time Gap
+ 
+    // Loop through array and find gaps between free slots. If gaps are sufficiently large, add them to list.
+    for(int endPointer = 0; endPointer < occupiedTimes.length; endPointer++) {
+      boolean slot = occupiedTimes[endPointer];
+      if(slot == true) upperBound = endPointer; //The last free slot between lowerBound and endPointer
+      else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; //Include bound in calculation. if the last value is an 0, we need to increase range to include it in difference
+ 
+      if(slot == true || endPointer == occupiedTimes.length-1) {
+        int gapSize = upperBound - (lowerBound); 
+        if(gapSize >= duration) times.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
+ 
+        //Fastforward lowerbound to next free space and move end pointer to count from there.
+        for(lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
+        endPointer = lowerBound;
+      }
+    }
+ 
+    return times;
   }
+
 }
