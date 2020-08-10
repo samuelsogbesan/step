@@ -59,7 +59,7 @@ public final class FindMeetingQuery {
         //If the gap is sufficiently large, add a TimeRange of that size to our output list.
         if(gapSize >= duration) times.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
  
-        //Fastforward lowerbound to next free space and update end pointer to continue from there.
+        //Fast forward lowerBound to next free space and update endPointer to continue from there.
         for(lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
         endPointer = lowerBound;
       }
