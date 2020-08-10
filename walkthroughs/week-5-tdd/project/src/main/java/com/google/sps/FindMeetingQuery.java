@@ -30,7 +30,7 @@ public final class FindMeetingQuery {
     @param MeetingRequest request the meeting request used to determine event attendence.
     @return boolean[48] representing the day in 30 minute interval; a value at a specific index indicates whether the corresponding interval is occupied.
   */
-  private static boolean[] getOccupiedTimes(Event[] events, MeetingRequest request) {
+  protected static boolean[] getOccupiedTimes(Event[] events, MeetingRequest request) {
     final int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day
     final int THIRTY_MINUTES = 30; // The divisor used to split up the day
     
