@@ -321,3 +321,9 @@ a {
   font-weight: bold;
   width: fit-content;
 }
+
+.comment {
+  align-items: center;
+  display: flex;
+  margin: 1.5rem 1rem;
+}
