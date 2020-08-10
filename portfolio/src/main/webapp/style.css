@@ -321,3 +321,27 @@ a {
   font-weight: bold;
   width: fit-content;
 }
+
+.comment {
+  align-items: center;
+  display: flex;
+  margin: 1.5rem 1rem;
+}
+
+.comment > p {
+  margin: 0;
+  word-break: break-all;
+}
+
+.nickname {
+  background: white;
+  filter: invert(1);
+  flex: 0.3;
+  padding: 0.2rem 0;
+}
+
+.commentbox {
+  flex: 0.7;
+  padding: 0 1rem;
+  text-align: left;
+}
