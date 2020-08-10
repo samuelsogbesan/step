@@ -55,6 +55,8 @@ public final class FindMeetingQuery {
  
       if(slot == true || endPointer == occupiedTimes.length-1) {
         int gapSize = upperBound - lowerBound; // The range between these two values is the duration of the gap
+        
+        //If the gap is sufficiently large, add a TimeRange of that size to our output list.
         if(gapSize >= duration) times.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
  
         //Fastforward lowerbound to next free space and update end pointer to continue from there.
