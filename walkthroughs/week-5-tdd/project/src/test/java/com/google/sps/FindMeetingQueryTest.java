@@ -270,5 +270,15 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }
+
+  @Test(expected =  IllegalArgumentException.class)
+  public void slotBelowRange() {
+    query.convertToMinuteTimestamp(-1);
+  }
+
+  @Test(expected =  IllegalArgumentException.class)
+  public void slotAboveRange() {
+    query.convertToMinuteTimestamp(48);
+  }
 }
 
