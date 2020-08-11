@@ -37,7 +37,7 @@ public final class FindMeetingQuery {
     Event[] eventsArray = events.toArray(new Event[events.size()]);
     long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots.
     
-    if(duration > 47) return freeTimes; // If the duration is out of bounds, we don't need to add any times.
+    if (duration > 47) return freeTimes; // If the duration is out of bounds, we don't need to add any times.
  
     boolean[] occupiedTimes = getOccupiedTimes(eventsArray, request);
  
@@ -46,21 +46,21 @@ public final class FindMeetingQuery {
  
     // Loop through array and find gaps between free slots.
     // If gaps are sufficiently large, add them to list.
-    for(int endPointer = 0; endPointer < occupiedTimes.length; endPointer++) {
+    for (int endPointer = 0; endPointer < occupiedTimes.length; endPointer++) {
       boolean slot = occupiedTimes[endPointer];
 
       // If we find an occupied slot, set our gap upper bound to that slot.
-      if(slot == true) upperBound = endPointer;
+      if (slot == true) upperBound = endPointer;
       else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; // Include bound for gap size calculation.
  
-      if(slot == true || endPointer == occupiedTimes.length-1) {
+      if (slot == true || endPointer == occupiedTimes.length-1) {
         int gapSize = upperBound - lowerBound; // The range between these two values is the duration of the gap
         
         // If the gap is sufficiently large, add a TimeRange from those bounds to our output list.
-        if(gapSize >= duration) freeTimes.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
+        if (gapSize >= duration) freeTimes.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
  
         // Fast forward lowerBound to next free space and update endPointer to continue from there.
-        for(lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
+        for (lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
         endPointer = lowerBound;
       }
     }
