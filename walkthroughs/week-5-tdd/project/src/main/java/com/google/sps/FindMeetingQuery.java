@@ -33,16 +33,16 @@ public final class FindMeetingQuery {
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    List<TimeRange> times = new ArrayList<TimeRange>(); // Output list for possible meeting times
-    Event[] eventsArray = events.toArray(new Event[events.size()]); // Array of events
-    long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots
+    List<TimeRange> times = new ArrayList<TimeRange>(); // Output list for possible meeting times.
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+    long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots.
     
     if(duration > 47) return times; // If the duration is out of bounds, we don't need to add any times.
  
     boolean[] occupiedTimes = getOccupiedTimes(eventsArray, request);
  
-    int lowerBound = 0; // Start of Time Gap (first unoccupied slot past endPointer)
-    int upperBound = 0; // End of Time Gap (last unoccupied slot before first occupied slot after endpoint)
+    int lowerBound = 0; // Start of Time Gap (first unoccupied slot past endPointer).
+    int upperBound = 0; // End of Time Gap (last unoccupied slot before first occupied slot after endpoint).
  
     // Loop through array and find gaps between free slots.
     // If gaps are sufficiently large, add them to list.
@@ -51,7 +51,7 @@ public final class FindMeetingQuery {
 
       // If we find an occupied slot, set our gap upper bound to that slot.
       if(slot == true) upperBound = endPointer;
-      else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; // Include bound in calculation. if the last value is an 0, we need to increase range to include it in difference
+      else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; // Include bound for gap size calculation.
  
       if(slot == true || endPointer == occupiedTimes.length-1) {
         int gapSize = upperBound - lowerBound; // The range between these two values is the duration of the gap
