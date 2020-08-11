@@ -38,7 +38,7 @@ public final class FindMeetingQuery {
     @param int halfHour The halfhour slot to be converted.
     @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
   */
-  private static int convertToMinuteTimestamp(int halfHour) {
+  protected static int convertToMinuteTimestamp(int halfHour) {
     if(halfHour < 0 || halfHour > 47 ) throw new IllegalArgumentException("Time out of bounds.");
     
     return halfHour * 30;
