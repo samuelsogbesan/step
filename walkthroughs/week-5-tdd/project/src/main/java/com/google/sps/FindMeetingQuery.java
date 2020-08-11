@@ -40,6 +40,7 @@ public final class FindMeetingQuery {
   */
   private static int getTime(int halfHour) {
     if(halfHour < 0 || halfHour > 47 ) throw new IllegalArgumentException("Time out of bounds.");
+    
     return halfHour * 30;
   }
 
