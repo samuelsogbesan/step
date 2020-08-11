@@ -274,12 +274,14 @@ public final class FindMeetingQueryTest {
   @Test(expected =  IllegalArgumentException.class)
   public void slotBelowRange() {
     // Since slot < 0, we expect an IllegalArgumentException to be thrown.
+
     query.convertToMinuteTimestamp(-1);
   }
 
   @Test(expected =  IllegalArgumentException.class)
   public void slotAboveRange() {
     // Since slot > 47, we expect an IllegalArgumentException to be thrown.
+
     query.convertToMinuteTimestamp(48);
   }
 
@@ -287,16 +289,20 @@ public final class FindMeetingQueryTest {
   public void slotOnBoundary() {
     // The result should be the number of minutes elapsed up to the last half hour of the day.
     int slot = 47;
+
     int actual = query.convertToMinuteTimestamp(slot);
     int expected = 1410;
+
     Assert.assertEquals(expected, actual);
   }
 
   @Test
   public void slotInRangeNotBoundary() {
     int slot = 16;
+    
     int actual = query.convertToMinuteTimestamp(slot);
     int expected = slot * 30;
+
     Assert.assertEquals(expected, actual);
   }
 }
