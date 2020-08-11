@@ -36,7 +36,7 @@ public final class FindMeetingQuery {
     * Returns the minutes in a day from a half hour slot.
     *
     @param int halfHour The halfhour slot to be converted.
-    @exception IllegalArgumentException thrown if slot > 0 or slot > 47.
+    @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
   */
   private static int getTime(int halfHour) {
     if(halfHour < 0 || halfHour > 47 ) throw new IllegalArgumentException("Time out of bounds.");
