@@ -33,11 +33,11 @@ public final class FindMeetingQuery {
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    List<TimeRange> times = new ArrayList<TimeRange>(); // Output list for possible meeting times
+    List<TimeRange> freeTimes = new ArrayList<TimeRange>(); // Output list for possible meeting times
     Event[] eventsArray = events.toArray(new Event[events.size()]); // Array of events
     long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots
     
-    if(duration > 47) return times; // If the duration is out of bounds, we don't need to add any times.
+    if(duration > 47) return freeTimes; // If the duration is out of bounds, we don't need to add any times.
  
     boolean[] occupiedTimes = getOccupiedTimes(eventsArray, request);
  
@@ -57,7 +57,7 @@ public final class FindMeetingQuery {
         int gapSize = upperBound - lowerBound; // The range between these two values is the duration of the gap
         
         // If the gap is sufficiently large, add a TimeRange from those bounds to our output list.
-        if(gapSize >= duration) times.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
+        if(gapSize >= duration) freeTimes.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
  
         // Fast forward lowerBound to next free space and update endPointer to continue from there.
         for(lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
@@ -65,7 +65,7 @@ public final class FindMeetingQuery {
       }
     }
  
-    return times;
+    return freeTimes;
   }
 
 }
