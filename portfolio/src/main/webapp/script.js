@@ -31,16 +31,15 @@ const addCommentElement = (comment) => {
   return commentElement;
 }
 
-const json = (data) => [{nickname:'James', comment:'I like it here!'}];
-
 const getComments = () => {
   fetch('/data')
-  .then(data => json())
+  .then(data => data.json())
   .then(comments => {
+    console.log(comments);
     const container = document.getElementById('comments-container');
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
-}
+};
 
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
@@ -50,7 +49,21 @@ const initialiseNavigation = () => {
     item.addEventListener('click', function() {
       navigate(this.getAttribute('data-link'));
     })
-  }
-}
+  };
+  
+  const sectionSelector = document.getElementById('section-selector');
+  sectionSelector.addEventListener('change', function (e) {
+    navigate(e.target.value);
+  });
+};
 
-window.onload = () => initialiseNavigation();
+const onload = () => {
+  new Promise((resolve, reject) => {
+    getComments();
+    resolve(true);
+    reject(false);
+  })
+  .then(_ => initialiseNavigation());
+};
+
+window.onload = () => onload();

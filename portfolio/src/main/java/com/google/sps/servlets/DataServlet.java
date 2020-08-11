@@ -66,6 +66,7 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String nickname = getParameter(request, "nickname", "anon");
     String comment = getParameter(request, "comment", "");
+    updateDatastore(nickname, comment);
     List<FormData> formData = Arrays.asList(new FormData(nickname, comment));
     response.setContentType("application/json;");
     response.getWriter().println(new Gson().toJson(formData));
@@ -77,5 +78,13 @@ public class DataServlet extends HttpServlet {
       return defaultValue;
     }
     return value;
+  }
+
+  private void updateDatastore(String nickname, String comment) {
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("nickname", nickname);
+    commentEntity.setProperty("comment", comment);
+    datastore.put(commentEntity);
   }
 }
