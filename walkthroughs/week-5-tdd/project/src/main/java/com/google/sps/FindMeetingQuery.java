@@ -32,6 +32,18 @@ public final class FindMeetingQuery {
     return false; // Fallback for if no attendees are found that belong to both the event and the meeting request
   }
 
+  /**
+    * Returns the minutes in a day from a half hour slot.
+    *
+    @param int halfHour The halfhour slot to be converted.
+    @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
+  */
+  protected static int convertToMinuteTimestamp(int halfHour) {
+    if(halfHour < 0 || halfHour > 47 ) throw new IllegalArgumentException("Time out of bounds.");
+    
+    return halfHour * 30;
+  }
+
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
     List<TimeRange> times = new ArrayList<TimeRange>(); // Output list for possible meeting times.
     Event[] eventsArray = events.toArray(new Event[events.size()]);
