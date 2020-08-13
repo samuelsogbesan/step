@@ -195,11 +195,11 @@ a {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  height: 70%;
+  height: 50%;
   justify-content: center;
   margin: auto;
   text-align: center;
-  width: 70%;
+  width: 50%;
 }
 
 .card,
