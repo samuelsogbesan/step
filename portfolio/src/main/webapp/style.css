@@ -35,6 +35,11 @@ body {
   justify-content: space-evenly;
 }
 
+@keyframes spin {
+  0%   {transform: initial;}
+  100% {transform: rotate(360deg);}
+}
+
 .socials-grid {
   align-items: center;
   display: grid;
