@@ -271,6 +271,7 @@ a {
 
 .gallery-card.wide {
   grid-column: span 2;
+  background-position: left;
 }
 
 #comments {
