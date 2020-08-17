@@ -64,6 +64,16 @@ const onscroll = () => {
 
   const percentage = Math.floor(scrollTop / scrollHeight * 100);
   const section = Math.floor(percentage / 20);
+
+  // section == 5 is the comment section, which is not on the nav.
+  const sectionSelector = document.getElementById('section-selector');
+  if(section == 5) {
+    sectionSelector.selectedIndex = 0; // Index 0 is the "Jump to..." prompt.
+  }
+  else {
+    sectionSelector.selectedIndex = section;
+  }
+
 }
 
 const onload = () => {
