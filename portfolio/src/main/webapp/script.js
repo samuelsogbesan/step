@@ -37,9 +37,12 @@ const getComments = () => {
   .then(comments => {
     console.log(comments);
     const container = document.getElementById('comments-container');
+    container.innerHTML = ''; // First Clear Children
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
 };
+
+const initialiseCommentRefreshButton = () => document.getElementById('comments-refresh').onclick = getComments;
 
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
@@ -63,7 +66,8 @@ const onload = () => {
     resolve(true);
     reject(false);
   })
-  .then(_ => initialiseNavigation());
+  .then(_ => initialiseNavigation())
+  .then(_ => initialiseCommentRefreshButton());
 };
 
 window.onload = () => onload();
