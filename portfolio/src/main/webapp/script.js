@@ -37,6 +37,7 @@ const getComments = () => {
   .then(comments => {
     console.log(comments);
     const container = document.getElementById('comments-container');
+    container.innerHTML = ''; // First Clear Children
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
 };
