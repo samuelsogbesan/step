@@ -42,6 +42,8 @@ const getComments = () => {
   });
 };
 
+const initialiseCommentRefreshButton = () => document.getElementById("comments-refresh").onclick = getComments;
+
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
 const initialiseNavigation = () => {
@@ -64,7 +66,8 @@ const onload = () => {
     resolve(true);
     reject(false);
   })
-  .then(_ => initialiseNavigation());
+  .then(_ => initialiseNavigation())
+  .then(_ => initialiseCommentRefreshButton());
 };
 
 window.onload = () => onload();
