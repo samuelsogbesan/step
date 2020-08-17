@@ -55,6 +55,8 @@ const initialiseNavigation = () => {
   sectionSelector.addEventListener('change', function (e) {
     navigate(e.target.value);
   });
+
+  document.body.onscroll = onscroll;
 };
 
 const onscroll = () => {
