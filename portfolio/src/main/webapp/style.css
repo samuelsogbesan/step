@@ -274,19 +274,19 @@ a {
   grid-column: span 2;
 }
 
-.img-1 {
+.img-museum {
   background-image:url(/images/IMG_1865.JPG)
 }
 
-.img-2 {
+.img-house {
   background-image:url(/images/IMG_1385.JPG)
 }
 
-.img-3 {
+.img-party {
   background-image:url(/images/IMG_3361.JPG)
 }
 
-.img-4 {
+.img-restaurant {
   background-image:url(/images/IMG_3866.JPG)
 }
 
