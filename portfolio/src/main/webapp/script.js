@@ -57,6 +57,12 @@ const initialiseNavigation = () => {
   });
 };
 
+const onscroll = () => {
+  const container = document.documentElement;
+  var scrollHeight = container.scrollHeight - container.clientHeight;
+  var scrollTop = container.scrollTop;
+}
+
 const onload = () => {
   new Promise((resolve, reject) => {
     getComments();
