@@ -63,14 +63,17 @@ const onscroll = () => {
   const container = document.documentElement;
   const scrollHeight = container.scrollHeight - container.clientHeight;
   const scrollTop = container.scrollTop;
+  const PROMPT_SECTION = 0;
+  const COMMENT_SECTION = 5;
+  const NUMBER_OF_SECTIONS = 5;
 
   const percentage = Math.floor(scrollTop / scrollHeight * 100);
-  const section = Math.floor(percentage / 20);
+  const section = Math.floor(percentage / (100 / NUMBER_OF_SECTIONS));
 
   // section == 5 is the comment section, which is not on the nav.
   const sectionSelector = document.getElementById('section-selector');
-  if(section == 5) {
-    sectionSelector.selectedIndex = 0; // Index 0 is the "Jump to..." prompt.
+  if(section == COMMENT_SECTION) {
+    sectionSelector.selectedIndex = PROMPT_SECTION; // Index 0 is the "Jump to..." prompt.
   }
   else {
     sectionSelector.selectedIndex = section;
