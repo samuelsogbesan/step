@@ -258,6 +258,8 @@ a {
 }
 
 .gallery-card {
+  background-size: cover;
+  background-position: center;
   grid-column: span 1;
   grid-row: span 1;
   outline: 3px white solid;
