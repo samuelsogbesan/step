@@ -258,6 +258,8 @@ a {
 }
 
 .gallery-card {
+  background-size: cover;
+  background-position: center;
   grid-column: span 1;
   grid-row: span 1;
   outline: 3px white solid;
@@ -268,7 +270,24 @@ a {
 }
 
 .gallery-card.wide {
+  background-position: left;
   grid-column: span 2;
+}
+
+.img-museum {
+  background-image: url(/images/IMG_1865.JPG);
+}
+
+.img-house {
+  background-image: url(/images/IMG_1385.JPG);
+}
+
+.img-party {
+  background-image: url(/images/IMG_3361.JPG);
+}
+
+.img-restaurant {
+  background-image: url(/images/IMG_3866.JPG);
 }
 
 #comments {
