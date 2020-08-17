@@ -35,6 +35,11 @@ body {
   justify-content: space-evenly;
 }
 
+@keyframes spin {
+  0%   {transform: initial;}
+  100% {transform: rotate(360deg);}
+}
+
 .socials-grid {
   align-items: center;
   display: grid;
@@ -53,7 +58,11 @@ body {
   filter: invert(1);
   overflow: hidden;
   padding: 1.5rem 0;
-  width: 50%;
+  width: 30%;
+}
+
+.socials-grid > * > img:hover {
+  animation: spin 1s ease-in-out 0s 1 normal;
 }
 
 #navigation {
