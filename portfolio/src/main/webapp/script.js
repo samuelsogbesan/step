@@ -72,7 +72,7 @@ const onscroll = () => {
 
   // section == 5 is the comment section, which is not on the nav.
   const sectionSelector = document.getElementById('section-selector');
-  if(section == COMMENT_SECTION) {
+  if (section == COMMENT_SECTION) {
     sectionSelector.selectedIndex = PROMPT_SECTION; // Index 0 is the "Jump to..." prompt.
   }
   else {
