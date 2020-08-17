@@ -59,8 +59,8 @@ const initialiseNavigation = () => {
 
 const onscroll = () => {
   const container = document.documentElement;
-  var scrollHeight = container.scrollHeight - container.clientHeight;
-  var scrollTop = container.scrollTop;
+  const scrollHeight = container.scrollHeight - container.clientHeight;
+  const scrollTop = container.scrollTop;
 }
 
 const onload = () => {
