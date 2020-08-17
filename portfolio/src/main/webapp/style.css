@@ -274,6 +274,22 @@ a {
   grid-column: span 2;
 }
 
+.img-1 {
+  background-image:url(/images/IMG_1865.JPG)
+}
+
+.img-2 {
+  background-image:url(/images/IMG_1385.JPG)
+}
+
+.img-3 {
+  background-image:url(/images/IMG_3361.JPG)
+}
+
+.img-4 {
+  background-image:url(/images/IMG_3866.JPG)
+}
+
 #comments {
   align-items: center;
   background-color: var(--quaternary);
