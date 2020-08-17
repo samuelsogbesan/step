@@ -61,6 +61,9 @@ const onscroll = () => {
   const container = document.documentElement;
   const scrollHeight = container.scrollHeight - container.clientHeight;
   const scrollTop = container.scrollTop;
+
+  const percentage = Math.floor(scrollTop / scrollHeight * 100);
+  const section = Math.floor(percentage / 20);
 }
 
 const onload = () => {
