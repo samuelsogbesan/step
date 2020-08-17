@@ -275,19 +275,19 @@ a {
 }
 
 .img-museum {
-  background-image:url(/images/IMG_1865.JPG)
+  background-image: url(/images/IMG_1865.JPG);
 }
 
 .img-house {
-  background-image:url(/images/IMG_1385.JPG)
+  background-image: url(/images/IMG_1385.JPG);
 }
 
 .img-party {
-  background-image:url(/images/IMG_3361.JPG)
+  background-image: url(/images/IMG_3361.JPG);
 }
 
 .img-restaurant {
-  background-image:url(/images/IMG_3866.JPG)
+  background-image: url(/images/IMG_3866.JPG);
 }
 
 #comments {
