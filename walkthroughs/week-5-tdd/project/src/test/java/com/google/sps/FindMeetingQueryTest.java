@@ -271,6 +271,102 @@ public final class FindMeetingQueryTest {
     Assert.assertEquals(expected, actual);
   }
 
+  @Test
+  public void noEventsToOccupy() {
+    // Pass in no events. This should result in no slots being considered as occupied.
+
+    Collection<Event> events = NO_EVENTS;
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
+
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
+    boolean[] expected = new boolean[48];
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
+  }
+
+  @Test
+  public void noAttendedEvents() {
+    // Pass in events, but have no events that have attendes overlapping with the meeting request.
+    // These unattended events should not be considered.
+
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
+            Arrays.asList(PERSON_A)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+ 
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
+ 
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
+    boolean[] expected = new boolean[48];
+ 
+    Assert.assertTrue(Arrays.equals(expected, actual));
+  }
+
+  @Test
+  public void onlyAttendedEventsConsidered() {
+    // Pass in a mixture of attended and unattended events.
+    // Only the attended events should be considered.
+
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
+            Arrays.asList(PERSON_A)),
+        new Event("Event 2", TimeRange.fromStartDuration(TIME_0930AM, DURATION_2_HOUR),
+            Arrays.asList(PERSON_B)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+ 
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES); 
+ 
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
+    boolean[] expected = new boolean[48];
+
+    int from = TIME_0930AM / 30;
+    int to = TIME_0930AM / 30 + DURATION_2_HOUR / 30; 
+    Arrays.fill(expected, from, to, true);
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
+  }
+
+  @Test
+  public void singleSlotEvent() {
+    // Boundary case
+    // Pass in attended events that elapse 30 minutes.
+    // These should only occupy one slot (respectively, with no overlap).
+
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartDuration(TIME_0930AM, DURATION_30_MINUTES),
+            Arrays.asList(PERSON_B)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
+
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
+    boolean[] expected = new boolean[48];
+    expected[TIME_0930AM / 30] = true;
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
+  }
+
+  @Test
+  public void fulldayEventConsidered() {
+    // Boundary case
+    // If an event spans the full length the day, all slots should be considered occupied.
+
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TimeRange.END_OF_DAY, true),
+            Arrays.asList(PERSON_B)));
+    Event[] eventsArray = events.toArray(new Event[events.size()]);
+
+    MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_B), DURATION_30_MINUTES);
+
+    boolean[] actual = query.getOccupiedSlotsInDay(eventsArray, request);
+    boolean[] expected = new boolean[48];
+    Arrays.fill(expected,true);
+
+    Assert.assertTrue(Arrays.equals(expected, actual));
+  }
+
   @Test(expected =  IllegalArgumentException.class)
   public void slotBelowRange() {
     // Since slot < 0, we expect an IllegalArgumentException to be thrown.
