@@ -37,9 +37,12 @@ const getComments = () => {
   .then(comments => {
     console.log(comments);
     const container = document.getElementById('comments-container');
+    container.innerHTML = ''; // First Clear Children
     comments.forEach(comment => container.appendChild(addCommentElement(comment)));
   });
 };
+
+const initialiseCommentRefreshButton = () => document.getElementById('comments-refresh').onclick = getComments;
 
 const navigate = (pageId) => document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
 
@@ -55,7 +58,31 @@ const initialiseNavigation = () => {
   sectionSelector.addEventListener('change', function (e) {
     navigate(e.target.value);
   });
+
+  document.body.onscroll = onscroll;
 };
+
+const onscroll = () => {
+  const container = document.documentElement;
+  const scrollHeight = container.scrollHeight - container.clientHeight;
+  const scrollTop = container.scrollTop;
+  const PROMPT_SECTION = 0;
+  const COMMENT_SECTION = 5;
+  const NUMBER_OF_SECTIONS = 5;
+
+  const percentage = Math.floor(scrollTop / scrollHeight * 100);
+  const section = Math.floor(percentage / (100 / NUMBER_OF_SECTIONS));
+
+  // section == COMMENT_SECTION represents comment section, which is not on the nav.
+  const sectionSelector = document.getElementById('section-selector');
+  if (section == COMMENT_SECTION) {
+    sectionSelector.selectedIndex = PROMPT_SECTION; // PROMPT_SECTION is the "Jump to..." prompt.
+  }
+  else {
+    sectionSelector.selectedIndex = section;
+  }
+
+}
 
 const onload = () => {
   new Promise((resolve, reject) => {
@@ -63,7 +90,8 @@ const onload = () => {
     resolve(true);
     reject(false);
   })
-  .then(_ => initialiseNavigation());
+  .then(_ => initialiseNavigation())
+  .then(_ => initialiseCommentRefreshButton());
 };
 
 window.onload = () => onload();
