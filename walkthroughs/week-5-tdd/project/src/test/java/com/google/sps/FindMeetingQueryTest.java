@@ -289,7 +289,7 @@ public final class FindMeetingQueryTest {
   @Test
   public void noAttendedEvents() {
     // Pass in events, but have no events that have attendes overlapping with the meeting request.
-    // These unattended events should not be considered
+    // These unattended events should not be considered.
 
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
@@ -368,5 +368,4 @@ public final class FindMeetingQueryTest {
   }
 
 } 
-
 
