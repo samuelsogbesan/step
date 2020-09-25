@@ -376,9 +376,9 @@ public final class FindMeetingQueryTest {
 
   @Test(expected =  IllegalArgumentException.class)
   public void slotAboveRange() {
-    // Since slot > 47, we expect an IllegalArgumentException to be thrown.
+    // Since slot > 48, we expect an IllegalArgumentException to be thrown.
 
-    query.convertToMinuteTimestamp(48);
+    query.convertToMinuteTimestamp(49);
   }
 
   @Test
