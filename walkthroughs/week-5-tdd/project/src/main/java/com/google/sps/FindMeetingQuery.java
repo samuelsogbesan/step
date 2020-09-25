@@ -15,7 +15,9 @@
 package com.google.sps;
 
 import com.google.sps.TimeRange;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public final class FindMeetingQuery {
   /**
@@ -32,10 +34,10 @@ public final class FindMeetingQuery {
     * a value at a specific index indicates whether the corresponding interval is occupied.
   */
   protected static boolean[] getOccupiedSlotsInDay(Event[] events, MeetingRequest request) {
-    final int slots = 24 * 2; // 24 * 2 is the number of half hour slots in a day.
+    final int SLOTS = 24 * 2; // 24 * 2 is the number of half hour slots in a day.
     final int THIRTY_MINUTES = 30; // The divisor used to split up the day.
     
-    boolean[] occupiedTimes = new boolean[slots]; // Output array of occupied times in the day.
+    boolean[] occupiedTimes = new boolean[SLOTS]; // Output array of occupied times in the day.
 
     // Mark slots in occupiedTimes as true if an attended event occurs there.
     for (int i = 0; i < events.length; i++) {
@@ -47,14 +49,14 @@ public final class FindMeetingQuery {
       int eventEnd = (eventTime.end()) / THIRTY_MINUTES - 1;
 
       // Indicate all the slots between eventStart and EventEnd as occupied.
-      for (int j = eventStart; j <= eventEnd && j < slots; j++) occupiedTimes[j] = true;
+      for (int j = eventStart; j <= eventEnd && j < SLOTS; j++) occupiedTimes[j] = true;
     }
  
     return occupiedTimes;
   }
 
   /**
-    * Returns whether or not an event is attended by the required attendees from the Meeting Request
+    * Returns whether an event is attended by the required attendees from the Meeting Request.
     *
     @param Event event The input event to compare against
     @param MeetingRequest request The subject meeting request
@@ -65,8 +67,8 @@ public final class FindMeetingQuery {
     Collection<String> requestAttendees = request.getAttendees();
     for (String attendee : eventAttendees) if (requestAttendees.contains(attendee)) return true;
 
-    return false; // Fallback for if no attendees are found that belong to both the event and the meeting request
-
+    // Fallback if no attendees are found that belong to both the event and the meeting request.
+    return false;
   }
 
   /**
@@ -76,22 +78,27 @@ public final class FindMeetingQuery {
     @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
   */
   protected static int convertToMinuteTimestamp(int halfHour) {
-    if(halfHour < 0 || halfHour > 47 ) throw new IllegalArgumentException("Time out of bounds.");
+    if(halfHour < 0 || halfHour > 48) throw new IllegalArgumentException("Time out of bounds.");
     
     return halfHour * 30;
   }
 
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    List<TimeRange> freeTimes = new ArrayList<TimeRange>(); // Output list for possible meeting times.
+    List<TimeRange> freeTimes = new ArrayList<TimeRange>(); // List for possible meeting times.
     Event[] eventsArray = events.toArray(new Event[events.size()]);
-    long duration = request.getDuration() / 30; // Meeting duration in number of half hour array slots.
+    long duration = request.getDuration() / 30; // Meeting duration in number of half hour slots.
     
-    if (duration > 47) return freeTimes; // If the duration is out of bounds, we don't need to add any times.
- 
-    boolean[] occupiedTimes = getOccupiedTimes(eventsArray, request);
+    // If the duration is out of bounds, we don't need to add any times.
+    if (duration <= 0 ) {
+      freeTimes.add(TimeRange.WHOLE_DAY);
+      return freeTimes;
+    }
+    if (duration > 47) return freeTimes;
+
+    boolean[] occupiedTimes = getOccupiedSlotsInDay(eventsArray, request);
  
     int lowerBound = 0; // Start of Time Gap (first unoccupied slot past endPointer).
-    int upperBound = 0; // End of Time Gap (last unoccupied slot before first occupied slot after endpoint).
+    int upperBound = 0; // End of Time Gap (last unoccupied slot after lowerBound).
  
     // Loop through array and find gaps between free slots.
     // endPointer points at the first most scanned element in the array.
@@ -101,16 +108,23 @@ public final class FindMeetingQuery {
 
       // If we find an occupied slot, set our gap upper bound to that slot.
       if (slot == true) upperBound = endPointer;
-      else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; // Include bound for gap size calculation.
+      // 
+      else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; 
  
       if (slot == true || endPointer == occupiedTimes.length-1) {
-        int gapSize = upperBound - lowerBound; // The range between these two values is the duration of the gap
+        // The range between these two values is the duration of the gap.
+        int gapSize = upperBound - lowerBound;
         
         // If the gap is sufficiently large, add a TimeRange from those bounds to our output list.
-        if (gapSize >= duration) freeTimes.add(TimeRange.fromStartEnd(getTime(lowerBound),getTime(upperBound),false));
+        if (gapSize >= duration) {
+          freeTimes.add(TimeRange.fromStartEnd(convertToMinuteTimestamp(lowerBound),
+                convertToMinuteTimestamp(upperBound),false));
+        }
  
         // Fast forward lowerBound to next free space and update endPointer to continue from there.
-        for (lowerBound = endPointer; lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; lowerBound++);
+        for (lowerBound = endPointer; 
+            lowerBound < occupiedTimes.length && occupiedTimes[lowerBound] == true; 
+            lowerBound++);
         endPointer = lowerBound;
       }
     }
@@ -119,4 +133,3 @@ public final class FindMeetingQuery {
   }
 
 }
-
