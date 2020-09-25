@@ -28,9 +28,9 @@ public final class FindMeetingQuery {
     * // Day     : |---------------------|
     * // Output  : |---------1111111----|
 
-    @param Event[] events the (potentially unattended) events during the day
-    @param MeetingRequest request the meeting request used to determine event attendence.
-    @return boolean[48] representing the day in 30 minute interval
+    * @param Event[] events the (potentially unattended) events during the day.
+    * @param MeetingRequest request the meeting request used to determine event attendence.
+    * @return boolean[48] representing the day in 30 minute interval.
     * a value at a specific index indicates whether the corresponding interval is occupied.
   */
   protected static boolean[] getOccupiedSlotsInDay(Event[] events, MeetingRequest request) {
@@ -58,9 +58,9 @@ public final class FindMeetingQuery {
   /**
     * Returns whether an event is attended by the required attendees from the Meeting Request.
     *
-    @param Event event The input event to compare against
-    @param MeetingRequest request The subject meeting request
-    @return a boolean value that is true if the event and request have overlapping attendees.
+    * @param Event event The input events to schedule the meeting around.
+    * @param MeetingRequest request The subject meeting request.
+    * @return a boolean value that is true if the event and request have overlapping attendees.
   */
   private static boolean isAttended(Event event, MeetingRequest request) {
     Collection<String> eventAttendees = event.getAttendees();
@@ -86,8 +86,8 @@ public final class FindMeetingQuery {
 
   /**
    * Calculates the amount of free space in a day for a meeting to take place.
-   * @param Collection<Event> input 
-   * @param MeetingRequest request the input meeting to be
+   * @param Collection<Event> events the occupying events.
+   * @param MeetingRequest request the input meeting to be scheduled.
    * @return a collection of TimeRanges indicates free time.
    */
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
