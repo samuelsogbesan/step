@@ -100,7 +100,7 @@ public final class FindMeetingQuery {
     int lowerBound = 0; // Start of Time Gap (first unoccupied slot past endPointer).
     int upperBound = 0; // End of Time Gap (last unoccupied slot after lowerBound).
  
-    // Loop through array and find gaps between free slots.
+    // Loop through array and find gaps between occupied slots.
     // endPointer points at the first most scanned element in the array.
     // If gaps are sufficiently large, add them to list.
     for (int endPointer = 0; endPointer < occupiedTimes.length; endPointer++) {
