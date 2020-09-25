@@ -74,8 +74,9 @@ public final class FindMeetingQuery {
   /**
     * Returns the minutes in a day from a half hour slot.
     *
-    @param int halfHour The halfhour slot to be converted.
-    @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
+    * @param int halfHour The halfhour slot to be converted.
+    * @exception IllegalArgumentException thrown if slot < 0 or slot > 47.
+    * @return int timestamp in minutes.
   */
   protected static int convertToMinuteTimestamp(int halfHour) {
     if(halfHour < 0 || halfHour > 48) throw new IllegalArgumentException("Time out of bounds.");
@@ -83,6 +84,12 @@ public final class FindMeetingQuery {
     return halfHour * 30;
   }
 
+  /**
+   * Calculates the amount of free space in a day for a meeting to take place.
+   * @param Collection<Event> input 
+   * @param MeetingRequest request the input meeting to be
+   * @return a collection of TimeRanges indicates free time.
+   */
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
     List<TimeRange> freeTimes = new ArrayList<TimeRange>(); // List for possible meeting times.
     Event[] eventsArray = events.toArray(new Event[events.size()]);
@@ -108,7 +115,7 @@ public final class FindMeetingQuery {
 
       // If we find an occupied slot, set our gap upper bound to that slot.
       if (slot == true) upperBound = endPointer;
-      // 
+      // Increase search bound by one to include the last element.
       else if(endPointer == occupiedTimes.length-1) upperBound = endPointer+1; 
  
       if (slot == true || endPointer == occupiedTimes.length-1) {
